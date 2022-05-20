@@ -17,7 +17,7 @@ module.exports = options => {
 			src: [
 				`${src}/scripts.js`
 			],
-			dest: `${dest}/scripts.js`
+			dest: `${dest}/scripts.concat.js`
 		});
 	}
 	

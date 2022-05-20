@@ -27,7 +27,7 @@ buildstyles({
 });
 
 // js
-concat({ file: 'scripts.js' });
+concat({ file: 'scripts.concat.js' });
 setTimeout(() => {
 	babel({ file: 'scripts.js' });
 }, 2000);
