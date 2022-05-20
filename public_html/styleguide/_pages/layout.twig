@@ -1,4 +1,4 @@
-{% include 'styleguide/_partials/intro.twig' with  {
+{% include '_partials/intro.twig' with  {
     'title': 'Layout',
     'description': 'In this "layout" section you will find everything you need to structurally layout each page. All these elements are only styled structural so no borders, backgrounds or other properties will be found here.',
     'notices': [
@@ -9,7 +9,7 @@
 <div class="styleguide-section">
     <div class="sg-h2">Stack</div>
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Stack',
         'description': '<p>All direct children in this container are stacked with their own top-margin (may be different for different items).</p>This is the main class to use to space elements from each other.<p></p>',
         'markup': '<div class="stack">
@@ -19,7 +19,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Stack | scale: -4',
         'description': '<p>Using Modular Scale -4 for margins.</p>',
         'markup': '<div class="stack stack--scale:-4">
@@ -29,7 +29,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Stack | scale: -2',
         'description': '<p>Using Modular Scale -2 for margins.</p>',
         'markup': '<div class="stack stack--scale:-2">
@@ -39,7 +39,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Stack | scale: -1',
         'description': '<p>Using Modular Scale -1 for margins.</p>',
         'markup': '<div class="stack stack--scale:-1">
@@ -49,7 +49,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Stack | scale: 0',
         'description': '<p>Using Modular Scale 0 for margins.</p>',
         'markup': '<div class="stack stack--scale:0">
@@ -59,7 +59,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Stack | scale: 1',
         'description': '<p>Using Modular Scale 1 for margins.</p>',
         'markup': '<div class="stack stack--scale:1">
@@ -69,7 +69,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Stack | scale: 2',
         'description': '<p>Using Modular Scale 2 for margins.</p>',
         'markup': '<div class="stack stack--scale:2">
@@ -79,7 +79,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Stack | scale: none',
         'description': '<p>Remove margins</p>',
         'markup': '<div class="stack stack--scale:none">
@@ -89,7 +89,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Stack borders',
         'description': '<p>Add borders between sections</p>',
         'markup': '<div class="stack stack--borders">
@@ -99,7 +99,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Stack | fluid',
         'description': '<p>Stack with a fluid top margin depending on viewport width.</p>',
         'markup': '<div class="stack stack--fluid">
@@ -109,7 +109,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Stack center',
         'description': '<p>All direct children in this container are centered using the
 		<code>$content-width</code> variable.</p>
@@ -127,7 +127,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Stack center > narrow',
         'description': '<p>Makes the element as wide as the <code>$narrow-width</code> variable. Use as child of a
 		<code>.stack.stack--center</code> container.</p>',
@@ -135,7 +135,7 @@
         'wrapInside': '<div class="stack stack--center">...</div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Stack center > wider',
         'description': '<p>Makes the element as wide as the <code>$wider-width</code> variable. Use as child of a
 		<code>.stack.stack--center</code> container.</p>',
@@ -143,7 +143,7 @@
         'wrapInside': '<div class="stack stack--center">...</div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Stack center > widest',
         'description': '<p>Makes the element as wide as the <code>$site-width</code> variable. Use as child of a
 		<code>.stack.stack--center</code> container.</p>',
@@ -151,7 +151,7 @@
         'wrapInside': '<div class="stack stack--center">...</div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Stack center > full-width',
         'description': '<p>Makes the element as wide as the parent container. Use as child of a
 		<code>.stack.stack--center</code> container.</p>
@@ -165,12 +165,12 @@
 
 <div class="styleguide-section">
     <div class="sg-h2">Center</div>
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Center',
         'description': '<p>Self centering element.</p>',
         'markup': '<div class="center">Example</div>'
     } only %}
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Center: size XS',
         'description': '<p>Small self centering element.</p>',
         'markup': '<div class="center center--size:xs">Example</div>'
@@ -180,7 +180,7 @@
 
 <div class="styleguide-section">
     <div class="sg-h2">Grid</div>
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Grid',
         'description': '<p>Children will stay neatly in a self-growing grid. All children are at least <code>$grid-item-width</code> wide.</p><p>Falls back to flexbox on older browsers.</p>',
         'markup': '<div class="grid">
@@ -192,7 +192,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Grid XXS',
         'description': '<p>All children are at least <code>$grid-item-width--xxs</code> wide.</p>',
         'markup': '<div class="grid grid--size:xxs">
@@ -204,7 +204,7 @@
 </div>',
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Grid XS',
         'description': '<p>All children are at least <code>$grid-item-width--xs</code> wide.</p>',
         'markup': '<div class="grid grid--size:xs">
@@ -216,7 +216,7 @@
 </div>',
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Grid S',
         'description': '<p>All children are at least <code>$grid-item-width--s</code> wide.</p>',
         'markup': '<div class="grid grid--size:s">
@@ -228,7 +228,7 @@
 </div>',
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Grid XL',
         'description': '<p>All children are at least <code>$grid-item-width--xl</code> wide.</p>',
         'markup': '<div class="grid grid--size:xl">
@@ -240,7 +240,7 @@
 </div>',
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Grid single',
         'description': '<p>No columns, but keep the vertical gaps.</p>',
         'markup': '<div class="grid grid--single">
@@ -256,7 +256,7 @@
 
 <div class="styleguide-section">
     <div class="sg-h2">Switcher</div>
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Switcher',
         'description': '<p>Stacked containers on a small screen and aligned when all children are at least <code>$grid-item-width</code> wide.</p>',
         'markup': '<div class="switcher">
@@ -269,7 +269,7 @@
 </div>',
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Switcher 1:2',
         'description': '<p>Stacked containers on a small screen and aligned in a 1/2 ratio when both children are at least <code>$grid-item-width</code> wide.</p>',
         'markup': '<div class="switcher switcher--1:2">
@@ -280,7 +280,7 @@
 </div>',
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Switcher 2:1',
         'description': '<p>Stacked containers on a small screen and aligned in a 2/1 ratio when both children are at least <code>$grid-item-width</code> wide.</p>',
         'markup': '<div class="switcher switcher--2:1">
@@ -291,7 +291,7 @@
 </div>',
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Switcher: size XS',
         'description': '<p>A small size switcher.</p>',
         'markup': '<div class="switcher switcher--size:xs">
@@ -308,7 +308,7 @@
 
 <div class="styleguide-section">
     <div class="sg-h2">Has sidebar</div>
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Has left sidebar.',
         'description': '<p>A left sidebar. Sidebar has a "fixed" width which differs it from the switcher.</p>',
         'markup': '<div class="has-sidebar has-sidebar--left">
@@ -319,7 +319,7 @@
 </div>',
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Has right sidebar.',
         'description': '<p>A right sidebar. Sidebar has a "fixed" width which differs it from the switcher.</p>',
         'markup': '<div class="has-sidebar has-sidebar--right">
@@ -330,7 +330,7 @@
 </div>',
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Has left & right sidebar.',
         'description': '<p>Left & right sidebar. Sidebars have "fixed" widths which differs it from the switcher.</p>',
         'markup': '<div class="has-sidebar has-sidebar--both">
@@ -342,7 +342,7 @@
 </div>',
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Breakpoint sidebar',
         'description': '<p>Has a left sidebar. Swicthes between stacked to aligned on <code>$content-width</code> breakpoint. Switches order from mobile to desktop (first column last on mobile).</p>',
         'markup': '<div class="has-sidebar has-sidebar--breakpoint">
@@ -358,7 +358,7 @@
 
 <div class="styleguide-section">
     <div class="sg-h2">Flag object</div>
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Flag object',
         'description': '<p>Automatically sizing flag-object. The <code>body</code> is fluid and <code>aside</code> is fixed.</p><p>Make sure you define a width for fluid elements (like images) inside an <code>aside</code> to avoid weird growing flag objects</p>',
         'markup': '<div class="flag-object">
@@ -367,7 +367,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Flag object | scale: -4',
         'description': 'Smaller spacing between elements',
         'markup': '<div class="flag-object flag-object--scale:-4">
@@ -376,7 +376,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Flag object | scale: -2',
         'description': 'Smaller spacing between elements',
         'markup': '<div class="flag-object flag-object--scale:-2">
@@ -385,7 +385,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Top aligned flag object',
         'description': '<p>Add this modifier to vertically align all children on top instead of middle</p>',
         'markup': '<div class="flag-object flag-object--top">
@@ -394,7 +394,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Bottom aligned flag object',
         'description': '<p>Add this modifier to vertically align all children on bottom instead of middle</p>',
         'markup': '<div class="flag-object flag-object--bottom">
@@ -403,7 +403,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'No wrap flag object',
         'description': '<p>Add this modifier to keep everything aligned instead of stacked even on smaller screens</p>',
         'markup': '<div class="flag-object flag-object--nowrap">
@@ -412,7 +412,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Inline flag object',
         'description': '<p>Add this modifier to get an inline-flex flag-object</p>',
         'markup': '<div class="flag-object flag-object--inline">
@@ -421,7 +421,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Flag object with fill instead of body',
         'description': '<p>Removes the 50% min-with from the "flexing" element</p>',
         'markup': '<div class="flag-object">
@@ -434,7 +434,7 @@
 
 <div class="styleguide-section">
     <div class="sg-h2">Cluster</div>
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Cluster',
         'description': '<p>A cluster of elements evenly spaced both vertical as horizontal.</p><p>The cluster doesn\'t care what you throw at it. Just remember that it is a flexbox so each row is as tall as the tallest child.</p>',
         'markup': '<div class="cluster">
@@ -444,7 +444,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Cluster XXS',
         'description': '<p>Cluster with smaller gaps.</p>',
         'markup': '<div class="cluster:xxs">
@@ -454,7 +454,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Cluster XS',
         'description': '<p>Cluster with smaller gaps.</p>',
         'markup': '<div class="cluster:xs">
@@ -464,7 +464,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Cluster inline',
         'description': '<p>An inline-flex cluster.</p>',
         'markup': '<div class="cluster cluster--inline">
@@ -474,7 +474,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Cluster filled',
         'description': '<p>A cluster dividing children between the width of the parent.</p>',
         'markup': '<div class="cluster cluster--fill">
@@ -484,7 +484,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Cluster stretched',
         'description': '<p>A cluster stretching children between the width of the parent.</p>',
         'markup': '<div class="cluster cluster--stretch">
@@ -494,7 +494,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Cluster center',
         'description': '<p>Centered align cluster</p>',
         'markup': '<div class="cluster cluster--center">
@@ -504,7 +504,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Cluster nowrap',
         'description': '<p>Doesn\'t wrap items</p>',
         'markup': '<div class="cluster cluster--nowrap">
@@ -514,7 +514,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Cluster end',
         'description': '<p>Align items to the end.</p>',
         'markup': '<div class="cluster cluster--end">
@@ -528,7 +528,7 @@
 
 <div class="styleguide-section">
     <div class="sg-h2">Snake</div>
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Snake',
         'description': '<p>A stacked list on smaller screens but going from left to right and back from right to left on the next line on larger screens.</p>',
         'markup': '<div class="snake">
@@ -552,42 +552,42 @@
             width. When the screen is smaller, <code>max:6</code> stays half the wifth of the <code>$site-width</code>
             variable.</p>
     </div>
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Max 3',
         'description': '',
         'markup': '<div class="max:3">Example</div>'
     } only %}
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Max 4',
         'description': '',
         'markup': '<div class="max:4">Example</div>'
     } only %}
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Max 5',
         'description': '',
         'markup': '<div class="max:5">Example</div>'
     } only %}
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Max 6',
         'description': '',
         'markup': '<div class="max:6">Example</div>'
     } only %}
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Max 8',
         'description': '',
         'markup': '<div class="max:8">Example</div>'
     } only %}
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Max narrow',
         'description': 'As wide as the <code>$narrow-width</code> variable',
         'markup': '<div class="max:narrow">Example</div>'
     } only %}
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Max content',
         'description': 'As wide as the <code>$content-width</code> variable',
         'markup': '<div class="max:content">Example</div>'
     } only %}
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Max center',
         'description': 'Center align the max container when used outside of stack--center.',
         'markup': '<div class="max:4 max--center">Example</div>'
@@ -597,7 +597,7 @@
 
 <div class="styleguide-section">
     <div class="sg-h2">Shift</div>
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Shift 3',
         'description': '',
         'markup': '<div class="shift:3">Example</div>'
@@ -607,13 +607,13 @@
 
 <div class="styleguide-section">
     <div class="sg-h2">Push / Pull</div>
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Pull up s:-2',
         'description': '',
         'markup': '<div class="pull-up:s-2">Example</div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Pull down',
         'description': '',
         'markup': '<div class="pull-down">Example</div>'

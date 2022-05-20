@@ -6,7 +6,7 @@ Variables available for including
 - color
 #}
 
-{% set slug = title|kebab|ascii %}
+{% set slug = title %}
 
 <div
         data-content='{"hex":"{{ color }}", "scss":"{{ scss }}", "background":"background:{{ slug }}", "color":"color:{{ slug }}"}'

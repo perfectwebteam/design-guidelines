@@ -1,4 +1,4 @@
-{% include 'styleguide/_partials/intro.twig' with  {
+{% include '_partials/intro.twig' with  {
     'title': 'Utilities',
     'description': 'Classes that mostly do just one thing.'
 } only %}
@@ -6,21 +6,21 @@
 <div class="styleguide-section">
     <div class="sg-h2">Margin</div>
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'margin-top:auto',
         'description': 'Auto margin top',
         'markup': false,
         'class': 'margin-top:auto'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'margin-top:none',
         'description': 'Margin top of 0',
         'markup': false,
         'class': 'margin-top:none'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'margin-top:s-2',
         'description': 'Margin top using Modular scale of -2',
         'markup': '<div class="margin-top:s-2">Example</div>',
@@ -28,7 +28,7 @@
         'wrapInside': '<div class="enlighten">...</div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'margin-top:s0',
         'description': 'Margin top using Modular scale of 0',
         'markup': '<div class="margin-top:s0">Example</div>',
@@ -36,7 +36,7 @@
         'wrapInside': '<div class="enlighten">...</div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'margin-top:s1',
         'description': 'Margin top using Modular scale of 1',
         'markup': '<div class="margin-top:s1">Example</div>',
@@ -44,14 +44,14 @@
         'wrapInside': '<div class="enlighten">...</div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'margin-bottom:auto',
         'description': 'Auto margin bottom',
         'markup': false,
         'class': 'margin-bottom:auto'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'margin-bottom:0',
         'description': 'Margin bottom using Modular scale of 0',
         'markup': '<div class="margin-bottom:s0">Example</div>',
@@ -59,7 +59,7 @@
         'wrapInside': '<div class="enlighten">...</div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'margin-bottom:s2',
         'description': 'Margin bottom using Modular scale of 2',
         'markup': '<div class="margin-bottom:s2">Example</div>',
@@ -67,14 +67,14 @@
         'wrapInside': '<div class="enlighten">...</div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'margin-left:auto',
         'description': 'Auto margin left',
         'markup': false,
         'class': 'margin-left:auto'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Next margin top: none',
         'description': 'Removes top-margin of next sibling element.',
         'markup': '<div>Example</div><div class="next-margin-top:none">Example</div><div>I don\'t have a top margin anymore.</div>',
@@ -82,7 +82,7 @@
         'wrapInside': '<div class="enlighten stack">...</div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Next margin top: -4',
         'description': 'Adds a modular scale -4 top-margin to next sibling element.',
         'markup': '<div>Example</div><div class="next-margin-top:-4">Example</div><div>My top margin is now a modular scale -4 margin.</div>',
@@ -90,7 +90,7 @@
         'wrapInside': '<div class="enlighten stack">...</div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Next margin top: -2',
         'description': 'Adds a modular scale -2 top-margin to next sibling element.',
         'markup': '<div>Example</div><div class="next-margin-top:-2">Example</div><div>My top margin is now a modular scale -2 margin.</div>',
@@ -98,7 +98,7 @@
         'wrapInside': '<div class="enlighten stack">...</div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Next margin top: 2',
         'description': 'Adds a modular scale 2 top-margin to next sibling element.',
         'markup': '<div>Example</div><div class="next-margin-top:2">Example</div><div>My top margin is now a modular scale 2 margin.</div>',
@@ -111,7 +111,7 @@
 <div class="styleguide-section">
     <div class="sg-h2">Padding</div>
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'padding',
         'description': 'Sets a responsive (modular scale 0) padding on all sides of an element',
         'markup': '<div class="padding">Example</div>',
@@ -119,7 +119,7 @@
         'wrapInside': '<div class="enlighten">...</div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'padding-vertical',
         'description': 'Sets a responsive padding on vertical sides of an element',
         'markup': '<div class="padding-vertical">Example</div>',
@@ -127,7 +127,7 @@
         'wrapInside': '<div class="enlighten">...</div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'padding-vertical:s3',
         'description': 'Sets a responsive (modular scale 3) padding on vertical sides of an element',
         'markup': '<div class="padding-vertical:s3">Example</div>',
@@ -135,7 +135,7 @@
         'wrapInside': '<div class="enlighten">...</div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'padding-horizontal',
         'description': 'Sets a responsive padding on horizontal sides of an element',
         'markup': '<div class="padding-horizontal">Example</div>',
@@ -143,7 +143,7 @@
         'wrapInside': '<div class="enlighten">...</div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'padding-top:none',
         'description': 'Padding top of 0',
         'markup': false,
@@ -151,7 +151,7 @@
         'wrapInside': '<div class="enlighten">...</div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'padding-top:s0',
         'description': 'Padding top using Modular scale of 0',
         'markup': '<div class="padding-top:s0">Example</div>',
@@ -159,7 +159,7 @@
         'wrapInside': '<div class="enlighten">...</div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'padding-bottom:none',
         'description': 'Padding bottom of 0',
         'markup': false,
@@ -167,7 +167,7 @@
         'wrapInside': '<div class="enlighten">...</div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'padding-bottom:s0',
         'description': 'Padding bottom using Modular scale of 0',
         'markup': '<div class="padding-bottom:s0">Example</div>',
@@ -180,14 +180,14 @@
 <div class="styleguide-section">
     <div class="sg-h2">Position</div>
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Relative',
         'description': 'Add <code>position: relative</code>',
         'markup': false,
         'class': 'position:relative'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Sticky:top',
         'description': 'Element will stick to the "top" of the document (just below the sticky header). This calss will not work when used inside an element with overflow:hidden',
         'markup': false,
@@ -199,28 +199,28 @@
 <div class="styleguide-section">
     <div class="sg-h2">Ratio</div>
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'ratio:16:9',
         'description': '',
         'markup': '<div class="ratio:16:9">Example</div>',
         'class': 'ratio:16:9'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'ratio:4:3',
         'description': '',
         'markup': '<div class="ratio:4:3">Example</div>',
         'class': 'ratio:4:3'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'ratio:3:1',
         'description': '',
         'markup': '<div class="ratio:3:1">Example</div>',
         'class': 'ratio:3:1'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'ratio:1:1',
         'description': '',
         'markup': '<div class="ratio:1:1">Example</div>',
@@ -232,35 +232,35 @@
 <div class="styleguide-section">
     <div class="sg-h2">Visibility</div>
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'visually:hidden',
         'description': 'Hides an element visually while keeping it readable for screenreaders and search engines',
         'markup': false,
         'class': 'visually:hidden'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'overflow:hidden',
         'description': 'Hides overflowing content',
         'markup': false,
         'class': 'overflow:hidden'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Hide on mobile',
         'description': 'Hides element until <code>$wider-width</code> variable',
         'markup': false,
         'class': 'hide-on-mobile'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Is hidden',
         'description': 'Hides element completely',
         'markup': false,
         'class': 'is-hidden'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'data-hidden',
         'description': 'Hides element completely using data-hidden="true" attribute. Set attribute to "false" for visible. Useful in JS',
         'markup': '<example data-hidden="true">...</example>'
@@ -271,7 +271,7 @@
 <div class="styleguide-section">
     <div class="sg-h2">Styles</div>
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'shaded',
         'description': '',
         'markup': '<div class="shaded">...</div>',
@@ -283,49 +283,49 @@
 <div class="styleguide-section">
     <div class="sg-h2">Flex</div>
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'flexrow',
         'description': 'Adds <code>display: flex; flex-direction: row;</code>',
         'markup': false,
         'class': 'flexrow'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'flexcol',
         'description': 'Adds <code>display: flex; flex-direction: column;</code>',
         'markup': false,
         'class': 'flexcol'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'self-end',
         'description': 'Adds <code>margin-left: auto;</code> To be used within a flexbox parent to align element to the right.',
         'markup': false,
         'class': 'self-end'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'flexcenter',
         'description': 'A flexbox parent to center it\'s children both horizontally and vertically.',
         'markup': false,
         'class': 'flexcenter'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'align-items: center',
         'description': 'Align items centered horizontally or vertically based on flex-direction.',
         'markup': false,
         'class': 'align-items:center'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'justify-content: space-between',
         'description': 'Adss space ebtween flexbox children',
         'markup': false,
         'class': 'justify-content:space-between'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Flex',
         'description': 'Adds <code>flex: 1 1 auto</code> to element',
         'markup': false,

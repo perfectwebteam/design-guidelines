@@ -1,4 +1,4 @@
-{% include 'styleguide/_partials/intro.twig' with  {
+{% include '_partials/intro.twig' with  {
     'title': 'Form',
     'description': 'Basic form elements to use.'
 } only %}
@@ -6,13 +6,13 @@
 <div class="styleguide-section">
     <div class="sg-h2">Fields</div>
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Form group',
         'description': 'Group form elements like the label, input, hints etc. together.',
         'markup': '<div class="form__group">...</div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Form field',
         'description': '',
         'markup': '<div class="form__group">
@@ -21,7 +21,7 @@
 	</div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Select',
         'description': '',
         'markup': '<div class="form__group">
@@ -37,7 +37,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Text area',
         'description': '',
         'markup': '<div class="form__group">
@@ -47,7 +47,7 @@
 	</div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Text area with counter',
         'description': 'Simply add a <code>maxlength</code> attribute with the allowed maximum characters.',
         'markup': '<div class="form__group">
@@ -57,7 +57,7 @@
 	</div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Checkboxes',
         'description': '',
         'markup': '<div class="form__group">
@@ -80,7 +80,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Radios',
         'description': '',
         'markup': '<div class="form__group">
@@ -103,7 +103,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Toggle',
         'description': '',
         'markup': '<div class="form__group">
@@ -114,7 +114,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Toggle with added "off" styling',
         'description': 'Styling for "off" mode as well.',
         'markup': '<div class="form__group">
@@ -125,7 +125,7 @@
 </div>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Styled file input',
         'description': '',
         'markup': '<div class="form__group">
@@ -144,7 +144,7 @@
 <div class="styleguide-section">
     <div class="sg-h2">Groups</div>
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Input group',
         'description': '',
         'markup': '<fieldset class="form__group" aria-describedby="group-example-hint">
@@ -157,7 +157,7 @@
 	</fieldset>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Large input group',
         'description': '',
         'markup': '<fieldset class="form__group" aria-describedby="group-example-hint4">
@@ -170,7 +170,7 @@
 	</fieldset>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Inline input group',
         'description': '<p class="notice">Attention: works only inside an element with a <code>data-inline-form</code> attribute (preferable a form element). Copying this styleguide example will give you a visual element only, no data will be saved anywhere, that needs to be done on a per item basis.</p>',
         'markup': '<div class="form__input-group form__input-group--inline">
@@ -181,7 +181,7 @@
         'wrapInside': '<form data-inline-form>...</form>'
     } only %}
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Styled form group',
         'description': '',
         'markup': '<div class="form__group form__group--styled">
@@ -195,7 +195,7 @@
 <div class="styleguide-section">
     <div class="sg-h2">Block select</div>
 
-    {% include 'styleguide/_partials/item.twig' with {
+    {% include '_partials/item.twig' with {
         'title': 'Block select',
         'description': '',
         'markup': '<div class="grid grid--size:s">
@@ -216,20 +216,4 @@
 	</div>'
     } only %}
 
-</div>
-
-
-<div class="styleguide-section">
-    <div class="sg-h2">Filters</div>
-
-    {% include 'styleguide/_partials/item.twig' with {
-        'title': 'Filters',
-        'description': '',
-        'partialPath': '_partials/filters.twig',
-        'partialAttributes': {
-            'amount': '13',
-            'defaultOrder': 'dateup',
-        },
-        'wrapInside': '<div class="stack">...</div>'
-    } only %}
 </div>
