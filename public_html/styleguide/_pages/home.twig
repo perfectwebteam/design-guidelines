@@ -1,8 +1,183 @@
 <div class="styleguide-intro">
-    <div class="sg-h1">{{ siteName }} online styleguide</div>
-    <div class="sg-description">
-        <p>In this styleguide you will find elements that can be used to build pages for the website
-            patientenfederatie.nl and other sites that are using the markup/CSS/JS of {{ siteUrl }}.</p>
+    <div class="sg-description sg-description--content">
+        <h1 class="heading:xl" id="design-guidelines">Design guidelines</h1>
+        <p>Designing for the web is not the same as designing for print media. Following are some guidelines to design usability and accessibility friendly web designs. When these guidelines are implemented properly, the website will score better on search engines as well.</p>
+        <h2 class="heading:l" id="a-note-upfront">A note upfront</h2>
+        <p>The information below might be a bit overkill. It gives a grasp of how we think a proper website should work code-wise. We understand if not everything is clear, or if you simply disagree. In that case we&#39;d love to sit together to discuss the best way to merge our design-systems. </p>
+        <h2 class="heading:l" id="general">General</h2>
+        <p>For easier communication between teams; it&#39;s a good practice to define and name everything. From color names and font-sizes to entire elements. We can put all this info in an online styleguide (like this example) accessible to everybody. This makes designing new pages a breeze, even if a new member joins the team.</p>
+        <h2 class="heading:l" id="fonts">Fonts</h2>
+        <h3 class="heading:m" id="pick-a-maximum-of-4-fonts">Pick a maximum of 4 fonts</h3>
+        <p>Every weight in a font is a webfont. So <code>Helvetica regular</code>, <code>regular-italic</code>, <code>light</code> en <code>bold</code> are actually 4 fonts, which would complete the websites font list. Too many fonts make a website heavy (and thus slow, scoring lower on search engines).</p>
+        <h4 class="heading:s" id="sizes">Sizes</h4>
+        <p>Pick a default font-size for mobile and one for desktop (they could be the same). Both should be at least <code>16px</code>. All the following &quot;scaling&quot; in the website will depend on this/these &quot;root&quot; font-size(s)</p>
+        <h4 class="heading:s" id="headings">Headings</h4>
+        <p>We usually work with <code>heading:xxs</code> up to <code>heading:xl</code>, but other names are good as well. These font-styles will define <code>font-family</code>, <code>weight</code>, <code>font-size</code>, <code>line-height</code> and <code>letter-spacing</code> for both mobile up to desktop. Color (and other) modifiers will be defined elsewhere.</p>
+        <h4 class="heading:s" id="fonts-sizes">Fonts sizes</h4>
+        <p>We usually work with <code>font-size:xs</code> up to <code>font-size:xl</code> (where <code>font-size:m</code> is the &quot;root&quot; page font-size, for example <code>16px</code>), but other names are good as well. These will define <code>font-size</code> and <code>line-height</code> for both mobile and desktop. Other modifiers (like color, alignment, font-weight, etc.) will be defined elsewhere.</p>
+        <h4 class="heading:s" id="font-modifiers">Font modifiers</h4>
+        <p>We usually work with modifiers like <code>font-weight:bold</code>, <code>text-align:center</code>, but other names are good as well.</p>
+        <h2 class="heading:l" id="color">Color</h2>
+        <h3 class="heading:m" id="names">Naming</h3>
+        <p>Define an X amount of colors and name them. Shades of colors and alpha transparent values of colors should have their own name as well. This way we can keep colors manageable. Each color should have a &quot;type&quot; color as well. This &quot;type&quot; color is the text color whenever the (non-type) color is used as a background color. Keep contrast in mind (see contrast below).</p>
+        <p>We usually create both backgrounds, as well as colors modifiers for all available colors such as <code>color:black</code>, <code>background:white</code>. etc. which can be used as classes in the markup.</p>
+        <h3 class="heading:m" id="contrast">Contrast</h3>
+        <p>Make sure all important elements, such as forms, warnings, labels, buttons etc. have <a href="https://webaim.org/resources/contrastchecker/">efficient color contrast</a>. This is not only for people whose sight is not optimal, but also for viewing the website on a mobile phone in the middle of the summer when the brightness of your screen can&#39;t get bright enough due to the brightness of the sun.</p>
+        <h2 class="heading:l" id="mobile-first">Mobile first</h2>
+        <h3 class="heading:m" id="content-mobile-first">Content mobile-first</h3>
+        <p>Start thinking about what needs to be displayed on a small mobile phone (320 x 568 is still a good start). If a particular piece of content (text, image, video, interactive) is not needed on mobile to convey the message, it&#39;s also not needed on desktop sized viewports. Two news-items on mobile to save space? Then two items on desktop it is as well. This is especially helpful when users switch devices (mobile on the way home during a train ride vs continuing on the couch on a tablet). </p>
+        <h3 class="heading:m" id="from-320-to-2560">From 320 to 2560</h3>
+        <p>What happens when the max-width of a design is reached (for example <code>1980px</code> wide)? Does the website keep growing? Center the design with colored areas left and right? Add a shadow behind the main design? Think about a proper maximum width for the design, but also what happens when a user spans their browser on a <code>2560px</code> wide (or even wider) screen.</p>
+        <h3 class="heading:m" id="order-of-elements">Order of elements</h3>
+        <p>In general; what&#39;s on top on mobile is on the left on desktop. Technically everything is possible, but extra code results in slower pages. Also keep in mind that users navigating with a keyboard expect items to focus in the order that they visually see them as well.</p>
+        <h2 class="heading:l" id="layout">Layout</h2>
+        <p>Our layout system is based on <a href="https://every-layout.dev/">every-layout</a>. They explain the rudiments quite good. We suggest at least scanning the rudiment pages and read the parts that grab your attention. </p>
+        <h3 class="heading:m" id="responsive-units-">Responsive &quot;units&quot;</h3>
+        <p>We work with a <a href="https://every-layout.dev/rudiments/modular-scale/">modular scale system</a>. We suggest reading this entire article since our whole layout system is based on this principle. This means that the websites we build shrink and grow depending on the users browser settings. People with bad sight might have their devices set to a standard bigger font size, and when working with pixels, these settings are ignored.</p>
+        <p>As a second layer we like to make &quot;values&quot; grow with the browser by setting mininum and maximum values and scale between these values using the browser width. An example; a heading on mobile might have a font-size of <code>24px</code>, on desktop it might be <code>32px</code>. In our code we basically tell the browser that our heading should have a font-size of <code>24px</code> up until a certain point (for example 37,5 &quot;units&quot;; which will translate to <code>600px</code> when both the browser and main website font-size is set to the default <code>16px</code>), then grow in size depending on the viewport size up until another point (60 units for example) and then stay <code>32px</code>. To further demonstrate this check out the video below.</p>
+        <p>[video]</p>
+        <h3 class="heading:m" id="names-for-layout-elements">Names for layout elements</h3>
+        <p>When building pages we love to work with a set of &quot;layout-building-blocks&quot; (see <a href="https://every-layout.dev/">every-layout</a>). We&#39;re using the &quot;stack&quot;, &quot;center&quot;, &quot;cluster&quot;, &quot;sidebar&quot;, &quot;switcher&quot; and the &quot;grid&quot; and we added our own <a href="https://csswizardry.com/2013/05/the-flag-object/">&quot;flag-object&quot;</a> and some options like &quot;max&quot; (span a maximum with based on the site with) and &quot;shift&quot; (when used with &quot;max&quot; you can shift elements to left or right). </p>
+        <p>All these layout elements do not care where they are or how wide your browser window is. Everything is calculated on the element width itself (using CSS, not JS). This make it &quot;impossible&quot; to design something &quot;specific&quot; for mobile/tablet/desktop since we never know where an element is being used and how it behaves on a certain width. Still need a button only on mobile? (there are use cases; like hiding a button on desktop that opens filters on mobile, while filters are always displayed in the sidebar on desktop for example) We can rebuild certain elements to make them dependent on the viewport instead of the element itself. These 'rebuilt' elements are less versatile but can be used whenever we exactly know where an element is being used.</p>
+        <h4 class="heading:s" id="layout-modifiers">Layout modifiers</h4>
+        <p>With a stack element you can space elements vertically from each other, with a cluster you space items both horizontally and vertically. But not each element should be spaced the same. therefor we&#39;ve got modifiers. Modifiers will make layout elements behave differently. Spacing is an example, grid item widths is another example. Preferably we work with the modular scale in here as well. As an example we can have a modifier called <code>stack--ms:2</code> which uses the modular scale 2 value to space items apart.</p>
+        <p><strong>Take a look:</strong> To see layouts in action. Check out the layouts pages. @TODO: add link</p>
+        <h2 class="heading:l" id="forms">Forms</h2>
+        <h3 class="heading:m" id="labels">Labels</h3>
+        <p>Each form element needs a label. Do not add the label inside the field itself since it will disappear when filling in the form. Always put the label <a href="https://www.uxmatters.com/mt/archives/2006/07/label-placement-in-forms.php">in front or above the field</a>.</p>
+        <h2 class="heading:l" id="this-is-a-bit-too-much-for-me">This is a bit too much for me</h2>
+        <p>The above information is, in a nutshell how we like to work with layouts to create the best websites for everybody. We understand that this is a lot to take in and fully understand, especially the &quot;layout&quot; section.</p>
+        <p>As demonstrated, the designs will never be pixel-perfect since they are depending on a lot of factors. So the make the designing phase a bit easier, here&#39;s a list of units you can use to design / size / space different elements:</p>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Element</th>
+                <th>Calculated pixel size</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Maximum site width</td>
+                <td>1184px</td>
+            </tr>
+            <tr>
+                <td>Content width</td>
+                <td>776px</td>
+            </tr>
+            <tr>
+                <td>Narrow width</td>
+                <td>572px</td>
+            </tr>
+            <tr>
+                <td>Wider width</td>
+                <td>980px</td>
+            </tr>
+            <tr>
+                <td>Full width</td>
+                <td>entire browser viewport</td>
+            </tr>
+            <tr>
+                <td>Mobile gutter width</td>
+                <td>24px</td>
+            </tr>
+            <tr>
+                <td>Desktop gutter width</td>
+                <td>40px</td>
+            </tr>
+            <tr>
+                <td>Modular Scale (MS) 0</td>
+                <td>16px</td>
+            </tr>
+            <tr>
+                <td>MS -1</td>
+                <td>11px</td>
+            </tr>
+            <tr>
+                <td>MS -2</td>
+                <td>7px</td>
+            </tr>
+            <tr>
+                <td>MS -3</td>
+                <td>5px</td>
+            </tr>
+            <tr>
+                <td>MS -4</td>
+                <td>3px</td>
+            </tr>
+            <tr>
+                <td>MS 1</td>
+                <td>24px</td>
+            </tr>
+            <tr>
+                <td>MS 2</td>
+                <td>36px</td>
+            </tr>
+            <tr>
+                <td>MS 3</td>
+                <td>54px</td>
+            </tr>
+            <tr>
+                <td>MS 4</td>
+                <td>80px</td>
+            </tr>
+            <tr>
+                <td>Default grid item</td>
+                <td>266px</td>
+            </tr>
+            <tr>
+                <td>Sidebar width</td>
+                <td>266px</td>
+            </tr>
+            <tr>
+                <td>font-size-m</td>
+                <td>16px</td>
+            </tr>
+            <tr>
+                <td>font-size-s</td>
+                <td>15px</td>
+            </tr>
+            <tr>
+                <td>font-size-xs</td>
+                <td>14px</td>
+            </tr>
+            <tr>
+                <td>font-size-l</td>
+                <td>18px</td>
+            </tr>
+            <tr>
+                <td>font-size-xl</td>
+                <td>20px</td>
+            </tr>
+            <tr>
+                <td>heading-size-m</td>
+                <td>24px &lt;&gt; 32px</td>
+            </tr>
+            <tr>
+                <td>heading-size-s</td>
+                <td>20px &lt;&gt; 24px</td>
+            </tr>
+            <tr>
+                <td>heading-size-xs</td>
+                <td>18px &lt;&gt; 20px</td>
+            </tr>
+            <tr>
+                <td>heading-size-xxs</td>
+                <td>16px &lt;&gt; 18px</td>
+            </tr>
+            <tr>
+                <td>heading-size-l</td>
+                <td>32px &lt;&gt; 38px</td>
+            </tr>
+            <tr>
+                <td>heading-size-xl</td>
+                <td>38px &lt;&gt; 40px</td>
+            </tr>
+            </tbody>
+        </table>
+        <p>The list above can easily be adjusted and extended. Just make sure everything fits in a design system :-)</p>
+        <h2 class="heading:l" id="an-example-please-">An example please?</h2>
+        <p>Understanding something by just reading it is quite hard ;)</p>
+        <p>Below you can find a &quot;general&quot; styleguide where you can click around, adjust your screen size, read the accompanying information and get a better understanding of the different building blocks.</p>
         <p>The following components are currently available:</p>
         <ul>
             {% for page in pages %}

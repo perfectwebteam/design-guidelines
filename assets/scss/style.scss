@@ -51,3 +51,14 @@
 @import "utilities/typography";
 @import "utilities/visibility";
 @import "utilities/width";
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+
+  th, td {
+    border: 1px solid #ccc;
+    padding: 4px;
+    text-align: left;
+  }
+}
