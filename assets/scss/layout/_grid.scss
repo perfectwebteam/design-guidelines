@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Grid
+   ========================================================================== */
+
+.grid {
+  & > ul {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  & > * {
+    display: flex;
+    flex-wrap: wrap;
+    @include ms(margin, $illusion-ms-grid, $illusion-ms-grid-multiplier);
+
+    @include fallback() {
+      @supports (display: grid) {
+        display: grid;
+        @include ms(grid-gap, 0);
+        margin: 0;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      }
+    }
+
+    & > * {
+      flex: 1 1 $grid-item-width;
+      max-width: $grid-item-width;
+      @include ms(margin, $illusion-ms-grid-item, $illusion-ms-grid-item-multiplier);
+
+      @include fallback() {
+        @supports (display: grid) {
+          max-width: none;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+
+/* Modifiers
+   ========================================================================== */
+
+.grid--size\:s {
+  & > * {
+    @include fallback() {
+      @supports (display: grid) {
+        grid-template-columns: repeat(auto-fill, minmax($grid-item-width--s, 1fr));
+      }
+    }
+
+    & > * {
+      flex: 1 1 $grid-item-width--s;
+    }
+  }
+}
+
+.grid--size\:l {
+  & > * {
+    @include fallback() {
+      @supports (display: grid) {
+        @include breakpoint($grid-item-width--l * 2.2) {
+          @include ms(grid-gap, 1);
+          grid-template-columns: repeat(auto-fill, minmax($grid-item-width--l, 1fr));
+        }
+      }
+    }
+
+    & > * {
+      flex: 1 1 $grid-item-width--l;
+    }
+  }
+}

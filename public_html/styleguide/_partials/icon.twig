@@ -1,0 +1,20 @@
+{#
+Variables available for including
+
+- title
+#}
+
+{% set slug = title|kebab|ascii %}
+{% set path = folder|default(false) %}
+
+<div
+        data-clipboard
+        data-clipboard-text="{{ '{{ svg(\'@webroot/assets/icons/' ~ path ~ slug ~ '.svg\') }}' }}"
+        class="styleguide-icon"
+>
+    {{ svg('@webroot/assets/icons/' ~ path ~ slug ~ '.svg') }}
+    <br/>
+    <small>
+        {{ title }}
+    </small>
+</div>

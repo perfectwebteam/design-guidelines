@@ -1,0 +1,45 @@
+/* ==========================================================================
+   List
+   ========================================================================== */
+
+/* Vertical */
+.list {
+  padding-left: 0;
+  list-style: none;
+
+  & > li {
+    padding: .25em 0;
+
+    @media print {
+      display: flex;
+    }
+  }
+
+  li > ul:not([class]) {
+    padding-left: 1em;
+    margin-top: ms(-3);
+    margin-bottom: -(ms(-3));
+    list-style: none;
+
+    & > li {
+      padding: .25em 0;
+
+      @media print {
+        display: flex;
+      }
+    }
+  }
+}
+
+/* Horizontal */
+.horizontal-list {
+  padding-left: 0;
+  list-style: none;
+  @include cluster();
+}
+
+.compact-horizontal-list {
+  padding-left: 0;
+  list-style: none;
+  @include cluster(.5em);
+}

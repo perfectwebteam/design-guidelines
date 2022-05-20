@@ -1,0 +1,105 @@
+// ==========================================================================
+// Base settings
+// ==========================================================================
+
+// Main
+// ==========================================================================
+// Use these variables to "translate" design pixel units to fluid units
+// 1. Optimal site width
+// 2. Optimal font-size (mobile)
+// 3. Optimal font-size (desktop) when viewport is as wide as above site-width
+// 4. Keep the font-size growing when max size is reached?
+// 5. Default modular scale (1* 1.5 * 1.5)
+// 6. Default line height amount (without unit, e.g. 1.5)
+
+@use "sass:math";
+
+$root-site-width:           1200 !default; // 1 *
+$root-site-font-size-s:     16 !default; // 2 *
+$root-site-font-size:       18 !default; // 3 *
+$root-site-font-growing:    true !default; // 4 *
+$root-grid-spacing:         2.25 !default; // 5 *
+$root-line-height:          1.6 !default; // 6 *
+
+
+// Typography
+// ==========================================================================
+
+$font-family:               sans-serif !default;
+$weight-normal:             400 !default;
+$weight-medium:             500 !default;
+$weight-bold:               700 !default;
+$heading-font-family:       sans-serif !default;
+$heading-font-weight:       $weight-bold !default;
+$heading-line-height:       1.25em !default;
+$heading-xxs-font-size-1:   px(14, false) * 1rem !default;
+$heading-xxs-font-size-2:   px(15, false) * 1rem !default;
+$heading-xs-font-size-1:    px(15, false) * 1rem !default;
+$heading-xs-font-size-2:    px(16, false) * 1rem !default;
+$heading-s-font-size-1:     px(16, false) * 1rem !default;
+$heading-s-font-size-2:     px(18, false) * 1rem !default;
+$heading-m-font-size-1:     px(18, false) * 1rem !default;
+$heading-m-font-size-2:     px(24, false) * 1rem !default;
+$heading-l-font-size-1:     px(24, false) * 1rem !default;
+$heading-l-font-size-2:     px(36, false) * 1rem !default;
+$heading-xl-font-size-1:    px(36, false) * 1rem !default;
+$heading-xl-font-size-2:    px(48, false) * 1rem !default;
+$heading-xxl-font-size-1:   px(48, false) * 1rem !default;
+$heading-xxl-font-size-2:   px(56, false) * 1rem !default;
+$xxs-font-size-1:           px(12, false) * 1rem !default;
+$xxs-font-size-2:           px(13, false) * 1rem !default;
+$xs-font-size-1:            px(14, false) * 1rem !default;
+$xs-font-size-2:            px(15, false) * 1rem !default;
+$s-font-size-1:             px(15, false) * 1rem !default;
+$s-font-size-2:             px(16, false) * 1rem !default;
+$m-font-size-1:             px(16, false) * 1rem !default;
+$m-font-size-2:             px(17, false) * 1rem !default;
+$l-font-size-1:             px(17, false) * 1rem !default;
+$l-font-size-2:             px(18, false) * 1rem !default;
+$xl-font-size-1:            px(18, false) * 1rem !default;
+$xl-font-size-2:            px(19, false) * 1rem !default;
+$xxl-font-size-1:           px(19, false) * 1rem !default;
+$xxl-font-size-2:           px(20, false) * 1rem !default;
+
+
+// Calculated values
+// ==========================================================================
+// You don't need to change these, you can if you like though
+
+$design-width:              (math.div($root-site-width, 16) * 1em) !default;
+$mobile-font-size:          (math.div($root-site-font-size-s, 16) * 1em) !default;
+$site-width:                calculatewidth(12) !default;
+$wider-width:               calculatewidth(10) !default;
+$content-width:             calculatewidth(8) !default;
+$narrow-width:              calculatewidth(7) !default;
+$grid-item-width:           $site-width * 0.25 !default;
+$grid-item-width--l:        math.div($site-width, 3.6) !default;
+$grid-item-width--s:        math.div($site-width, 5.5) !default;
+$grid-item-width--xs:       math.div($site-width, 7) !default;
+$grid-item-width--xxs:      $site-width * 0.1 !default;
+$grid-item-width--xxxs:     math.div($site-width, 16) !default;
+$sidebar-width:             $grid-item-width !default;
+$switcher-width:            $narrow-width !default;
+$switcher-2to1-amount:      2.11 !default;
+
+
+// Image path
+// ==========================================================================
+
+$image-path:                "../images/" !default;
+
+
+// Radii
+// ==========================================================================
+
+$radius: .75rem !default;
+$radius-small: $radius * 0.5 !default;
+$radius-tiny: math.div($radius, 3) !default;
+$radius-large: $radius * 1.5 !default;
+
+
+// Section
+// ==========================================================================
+
+$section-amount: .75 !default;
+

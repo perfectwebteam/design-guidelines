@@ -1,0 +1,13 @@
+/* ==========================================================================
+   Center
+   ========================================================================== */
+
+.center {
+  max-width: $content-width;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.center--size\:xs {
+  max-width: $content-width * .5;
+}

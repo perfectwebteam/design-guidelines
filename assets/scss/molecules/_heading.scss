@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Heading
+   ========================================================================== */
+
+[class*="heading:"],
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: block;
+}
+
+.heading\:xxs {
+  @include heading("xxs", true);
+}
+
+.heading\:xs {
+  @include heading("xs", true);
+}
+
+.heading\:s {
+  @include heading("s", true);
+}
+
+.heading\:m {
+  @include heading("m", true);
+}
+
+.heading\:l {
+  @include heading("l", true);
+}
+
+.heading\:xl {
+  @include heading("xl", true);
+}
+
+.heading\:xxl {
+  @include heading("xxl", true);
+}

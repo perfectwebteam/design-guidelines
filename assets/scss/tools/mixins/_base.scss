@@ -1,0 +1,42 @@
+// ==========================================================================
+// Base mixins
+// ==========================================================================
+
+
+// Fallback
+// ==========================================================================
+// When the $fallback variable is set to true you can preview how older
+// browsers behave. Always test on real old browser to be 100% sure
+
+@mixin fallback() {
+  @if ($illusion-fallback == false) {
+    @content;
+  }
+}
+
+// Contain
+// ==========================================================================
+// Default $site-width max-width settings for a container.
+
+@mixin contain($width: $site-width, $padding: true) {
+  @include ms(max-width, 0, -2, $width);
+  margin-right: auto;
+  margin-left: auto;
+  @if ($padding) {
+    @include ms(padding-right, 0);
+    @include ms(padding-left, 0);
+  }
+}
+
+// Max width
+// ==========================================================================
+
+@mixin maxWidth($amount: 6) {
+  width: 100%;
+  @include breakpoint($wider-width) {
+    max-width: calc((((100vw + #{ms(2, rem)}) / 12) * #{$amount}) - #{ms(2, rem)});
+  }
+  @include breakpoint($site-width) {
+    max-width: calc((((#{$site-width} + #{ms(2, rem)}) / 12) * #{$amount}) - #{ms(2, rem)});
+  }
+}

@@ -1,0 +1,15 @@
+<div class="styleguide-intro">
+    <div class="sg-h1">{{ siteName }} online styleguide</div>
+    <div class="sg-description">
+        <p>In this styleguide you will find elements that can be used to build pages for the website
+            patientenfederatie.nl and other sites that are using the markup/CSS/JS of {{ siteUrl }}.</p>
+        <p>The following components are currently available:</p>
+        <ul>
+            {% for page in pages %}
+                <li>
+                    <a data-toggle-tab href="#{{ page|lower }}">{{ page }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

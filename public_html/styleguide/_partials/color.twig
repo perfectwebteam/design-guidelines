@@ -1,0 +1,23 @@
+{#
+Variables available for including
+
+- title
+- scss
+- color
+#}
+
+{% set slug = title|kebab|ascii %}
+
+<div
+        data-content='{"hex":"{{ color }}", "scss":"{{ scss }}", "background":"background:{{ slug }}", "color":"color:{{ slug }}"}'
+        data-clipboard
+        data-clipboard-text="{{ color }}"
+        class="styleguide-color background:{{ slug }}"
+>
+    {{ title }}
+    <br/>
+    <small class="js-label">
+        {{ color }}
+    </small>
+</div>
+

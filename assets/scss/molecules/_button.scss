@@ -1,0 +1,39 @@
+/* ==========================================================================
+   Button
+   ========================================================================== */
+
+.button {
+  @include button-structure($display: inline-flex);
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  @include heading("s", true);
+  border-radius: $radius-small;
+
+  svg {
+    &:not([width]) {
+      min-width: 1em;
+    }
+
+    &:first-child {
+      margin-right: .5em;
+    }
+
+    &:last-child {
+      margin-left: .5em;
+    }
+
+    &:only-child {
+      margin: 0;
+    }
+  }
+
+  .visually\:hidden + svg {
+    margin-left: 0;
+  }
+}
+
+.button--block {
+  display: flex;
+  width: 100%;
+}

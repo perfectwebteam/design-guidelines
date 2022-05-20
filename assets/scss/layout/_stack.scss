@@ -1,0 +1,174 @@
+/* ==========================================================================
+   Stack
+   ========================================================================== */
+
+/**
+ * Stacking children using scale units
+ */
+
+@mixin stackdefaults() {
+  & > * {
+    margin-top: 0;
+  }
+
+  & > * + * {
+    margin-top: ms(1);
+  }
+
+  & > h2 + *:not(div):not(form),
+  & > h3 + *:not(div):not(form),
+  & > h4 + *:not(div):not(form) {
+    margin-top: ms(-1);
+  }
+}
+
+.stack {
+  padding-left: 0;
+  list-style: none;
+
+  // Defaults
+  @include stackdefaults();
+
+  // No margins for "invisible" elements
+  & > meta,
+  & > script,
+  & > [hidden],
+  & > .hidden,
+  & > .is-hidden,
+  & > .visually\:hidden {
+    margin-top: 0;
+
+    &:first-child {
+      & + * {
+        margin-top: 0;
+      }
+    }
+  }
+
+  // Switcher
+  .switcher + .switcher {
+    @include ms(margin-top, $illusion-ms-grid-item, $illusion-ms-grid-item-multiplier);
+  }
+
+  // Modular scale
+  &.stack--ms\:-4 {
+    & > * + * {
+      @include ms(margin-top, -4);
+    }
+  }
+
+  &.stack--ms\:-3 {
+    & > * + * {
+      @include ms(margin-top, -3);
+    }
+  }
+
+  &.stack--ms\:-2 {
+    & > * + * {
+      @include ms(margin-top, -2);
+    }
+  }
+
+  &.stack--ms\:-1 {
+    & > * + * {
+      @include ms(margin-top, -1);
+    }
+  }
+
+  &.stack--ms\:0 {
+    & > * + * {
+      @include ms(margin-top, 0);
+    }
+  }
+
+  &.stack--ms\:1 {
+    & > * + * {
+      @include ms(margin-top, 1);
+    }
+  }
+
+  &.stack--ms\:2 {
+    & > * + * {
+      @include ms(margin-top, 2);
+    }
+  }
+
+  &.stack--ms\:3 {
+    & > * + * {
+      @include ms(margin-top, 3);
+    }
+  }
+
+  &.stack--ms\:4 {
+    & > * + * {
+      @include ms(margin-top, 4);
+    }
+  }
+}
+
+.stack--padded {
+  .section,
+  .full-width {
+    @include ms(margin-right, 0, -1);
+    @include ms(margin-left, 0, -1);
+  }
+}
+
+
+/**
+ * Center children within stack element
+ */
+
+.stack--center {
+  &.stack--padded {
+    @include ms(padding);
+
+    section + section {
+      @include ms(margin-top, 2, $section-amount);
+    }
+  }
+
+  & > * {
+    max-width: replaceunit($content-width);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &.stack--narrow {
+    & > * {
+      max-width: replaceunit($narrow-width);
+    }
+  }
+
+  .content {
+    max-width: replaceunit($content-width);
+  }
+
+  .narrow {
+    max-width: replaceunit($narrow-width);
+  }
+
+  .wider {
+    width: 100%;
+    max-width: replaceunit($wider-width);
+  }
+
+  .widest {
+    width: 100%;
+    max-width: replaceunit($site-width);
+  }
+
+  .full-width {
+    max-width: none;
+
+    & + .full-width {
+      margin-top: 0;
+    }
+  }
+}
+
+.no-stack.no-stack {
+  & > * + * {
+    margin-top: 0;
+  }
+}

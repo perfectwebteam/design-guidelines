@@ -1,0 +1,96 @@
+{
+  "name": "design-guidelines",
+  "version": "1.0.0",
+  "license": "GPL-3.0",
+  "description": "Design guidelines",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perfectwebteam/design-guidelines.git"
+  },
+  "author": "Perfect Web Team",
+  "bugs": {
+    "url": "https://github.com/perfectwebteam/design-guidelines/issues"
+  },
+  "homepage": "https://github.com/perfectwebteam/design-guidelines#readme",
+  "config": {
+    "root": "",
+    "src": "./assets",
+    "dist": "public_html/assets",
+    "port": "3345",
+    "proxy": "https://local.designguidelines.pwt.nl",
+    "styleguide": "index.html",
+    "https": true
+  },
+  "browserslist": [
+    "> 2% in NL",
+    "not dead",
+    "IE 11",
+    "not op_mini all"
+  ],
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "useBuiltIns": "entry",
+          "corejs": 2,
+          "modules": false
+        }
+      ],
+      [
+        "minify",
+        {
+          "builtIns": false
+        }
+      ]
+    ],
+    "comments": false
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "scripts": {
+    "reinstall": "rimraf ./node_modules && ncu -u && npm install",
+    "prestart": "node ./build/tasks/build.js",
+    "start": "node ./build/tasks/browser-sync.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@khanacademy/tota11y": "^0.2.0",
+    "autoprefixer": "^9.8.8",
+    "babel-eslint": "^10.1.0",
+    "babel-preset-minify": "^0.5.1",
+    "browser-sync": "^2.27.5",
+    "concat": "^3.0.0",
+    "core-js": "^3.18.3",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "font-face": "^2.3.2",
+    "lsof": "^0.1.0",
+    "mocha": "^9.1.3",
+    "modernizr": "^3.11.8",
+    "postcss-clean": "^1.1.0",
+    "postcss-cli": "^7.1.1",
+    "ps-node": "^0.1.6",
+    "replace-in-file": "^6.3.1",
+    "rimraf": "^3.0.2",
+    "sass": "^1.43.2",
+    "scss-resets": "^0.5.2",
+    "stylelint": "^13.6.0",
+    "stylelint-config-recommended-scss": "^4.3.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.21.0",
+    "svgo": "^2.7.0",
+    "svgstore-cli": "^2.0.0",
+    "uninstall": "0.0.0"
+  },
+  "dependencies": {
+    "illusion": "github:marsvaardig/illusion#v6.5.0"
+  }
+}

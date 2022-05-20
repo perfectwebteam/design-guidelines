@@ -1,0 +1,17 @@
+/* Body
+   ========================================================================== */
+
+body {
+  max-width: 960px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: inherit;
+  line-height: inherit;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(#000, .2), 0 0 24px rgba(#000, .2);
+  @include font-smoothing();
+
+  @supports (display: flex) {
+    max-width: none;
+  }
+}

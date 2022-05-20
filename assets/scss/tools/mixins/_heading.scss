@@ -1,0 +1,67 @@
+// Heading
+// ==========================================================================
+
+@mixin heading($size: "m", $defaults: false) {
+  @if $size == "xxs" {
+    @if ($heading-xxs-font-size-1 != false and $heading-xxs-font-size-1 != $heading-xxs-font-size-2) {
+      @include fluid-property("font-size", $heading-xxs-font-size-1, $heading-xxs-font-size-2);
+    } @else if($heading-xxs-font-size-1) {
+      font-size: $heading-xxs-font-size-1;
+    }
+  }
+  @if $size == "xs" {
+    @if ($heading-xs-font-size-1 != false and $heading-xs-font-size-1 != $heading-xs-font-size-2) {
+      @include fluid-property("font-size", $heading-xs-font-size-1, $heading-xs-font-size-2);
+    } @else if($heading-xs-font-size-1) {
+      font-size: $heading-xs-font-size-1;
+    }
+  }
+  @if $size == "s" {
+    @if ($heading-s-font-size-1 != false and $heading-s-font-size-1 != $heading-s-font-size-2) {
+      @include fluid-property("font-size", $heading-s-font-size-1, $heading-s-font-size-2);
+    } @else if($heading-s-font-size-1) {
+      font-size: $heading-s-font-size-1;
+    }
+  }
+  @if $size == "m" {
+    @if ($heading-m-font-size-1 != false and $heading-m-font-size-1 != $heading-m-font-size-2) {
+      @include fluid-property("font-size", $heading-m-font-size-1, $heading-m-font-size-2);
+    } @else if($heading-m-font-size-1) {
+      font-size: $heading-m-font-size-1;
+    }
+  }
+  @if $size == "l" {
+    @if ($heading-l-font-size-1 != false and $heading-l-font-size-1 != $heading-l-font-size-2) {
+      @include fluid-property("font-size", $heading-l-font-size-1, $heading-l-font-size-2);
+    } @else if($heading-l-font-size-1) {
+      font-size: $heading-l-font-size-1;
+    }
+  }
+  @if $size == "xl" {
+    @if ($heading-xl-font-size-1 != false and $heading-xl-font-size-1 != $heading-xl-font-size-2) {
+      @include fluid-property("font-size", $heading-xl-font-size-1, $heading-xl-font-size-2);
+    } @else if($heading-xl-font-size-1) {
+      font-size: $heading-xl-font-size-1;
+    }
+  }
+  @if $size == "xxl" {
+    @if ($heading-xxl-font-size-1 != false and $heading-xxl-font-size-1 != $heading-xxl-font-size-2) {
+      @include fluid-property("font-size", $heading-xxl-font-size-1, $heading-xxl-font-size-2);
+    } @else if($heading-xxl-font-size-1) {
+      font-size: $heading-xxl-font-size-1;
+    }
+  }
+  @if $size == "xxxl" {
+    @if ($heading-xxxl-font-size-1 != false and $heading-xxxl-font-size-1 != $heading-xxxl-font-size-2) {
+      @include fluid-property("font-size", $heading-xxxl-font-size-1, $heading-xxxl-font-size-2);
+    } @else if($heading-xxxl-font-size-1) {
+      font-size: $heading-xxxl-font-size-1;
+    }
+  }
+
+  @if $defaults != false {
+    font-family: $heading-font-family;
+    font-weight: $heading-font-weight;
+    line-height: $heading-line-height;
+  }
+}

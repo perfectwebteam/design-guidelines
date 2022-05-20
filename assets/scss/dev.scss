@@ -1,0 +1,52 @@
+// Import all tools
+@import "tools/tools";
+
+/* A visual grid to show if elements are correctly inside the grid */
+
+html {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+}
+
+.overlay-grid-container {
+  position: fixed; // Fill complete page
+  top: -1px; // Fill complete page
+  right: 0; // Fill complete page
+  bottom: -1px; // Fill complete page
+  left: 0; // Fill complete page
+  z-index: 999;
+  box-sizing: border-box;
+  height: calc(100% + 2px); // Fill complete page
+  pointer-events: none; // So we can use devtools on elements behind it when grid is visible
+}
+
+.overlay-grid {
+  box-sizing: border-box;
+  display: grid;
+  width: 100%;
+  @include contain();
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+  outline: 1px solid rgb(255, 0, 255); // Use outline not to mess with css positioning
+  outline-offset: -1px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  @include ms(gap, $illusion-ms-grid-item);
+  grid-template-areas: ". . . . . . . . . . . .";
+}
+
+.overlay-grid__item {
+  box-sizing: border-box;
+  height: 100%; // Fill complete page
+  background: rgba(magenta, .1);
+  outline: 1px solid rgb(255, 0, 255); // Use outline not to mess with css positioning
+}
+
+// Template custom styleguide styling
+@import "styleguide-adjustments";

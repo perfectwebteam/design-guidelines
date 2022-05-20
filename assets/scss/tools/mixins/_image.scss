@@ -1,0 +1,11 @@
+// Full image
+// ==========================================================================
+
+@mixin full-image($position: false) {
+  @supports (object-fit: cover) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @include property(object-position, $position);
+  }
+}

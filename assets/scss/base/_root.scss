@@ -1,0 +1,47 @@
+/* Root
+   ========================================================================== */
+
+@use "sass:math";
+
+:root {
+  --spacing: #{ms(1, rem)};
+  $min-value: math.div($root-site-font-size-s, 16) * 1em;
+  $max-value: math.div($root-site-font-size, 16) * 1em;
+  $min-screen: $narrow-width;
+  $max-screen: $site-width;
+  font-size: $min-value;
+  line-height: $root-line-height;
+  scroll-behavior: smooth;
+
+  @media (min-width: $max-screen) {
+    font-size: $max-value;
+  }
+
+  @supports (top: clamp(1em, 1vw, 2em)) {
+    font-size: clamp(#{$min-value}, calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * ((100vw - #{$min-screen}) / #{strip-unit($max-screen - $min-screen)})), #{$max-value});
+  }
+
+  @if ($root-site-font-growing != false) {
+    @include breakpoint($site-width) {
+      font-size: calc(#{$max-value} + #{strip-unit($max-value - $min-value)} * ((100vw - #{$max-screen}) / #{strip-unit(($max-screen * 1.5) - $max-screen)}));
+    }
+  }
+
+  @include breakpoint($narrow-width) {
+    --spacing: calc(#{ms(1, rem)} + 1vw);
+  }
+
+  @include breakpoint($site-width) {
+    --spacing: #{ms(2, rem)};
+  }
+
+  // No smooth scroll for people who prefer not to
+  @media screen and (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}

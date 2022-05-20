@@ -1,0 +1,93 @@
+/* ==========================================================================
+   Flag object
+   ========================================================================== */
+
+.flag-object {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: -(ms(0));
+  margin-left: -(ms(0));
+
+  & > [class*="flag-object__"] {
+    margin-bottom: ms(0);
+    margin-left: ms(0);
+  }
+}
+
+.flag-object__aside {
+  flex-basis: auto;
+  flex-grow: 1;
+}
+
+.flag-object__body {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: 8rem;
+}
+
+.flag-object__fill {
+  flex-basis: 0;
+  flex-grow: 999;
+}
+
+
+/* Sizes
+   ========================================================================== */
+
+.flag-object--scale\:-4 {
+  margin-bottom: -(ms(-4));
+  margin-left: -(ms(-4));
+
+  & > [class*="flag-object__"] {
+    margin-bottom: ms(-4);
+    margin-left: ms(-4);
+  }
+}
+
+.flag-object--scale\:-2 {
+  margin-bottom: -(ms(-2));
+  margin-left: -(ms(-2));
+
+  & > [class*="flag-object__"] {
+    margin-bottom: ms(-2);
+    margin-left: ms(-2);
+  }
+}
+
+
+/* Don't wrap lines, keep flag-object on one line always
+   ========================================================================== */
+
+.flag-object--nowrap {
+  flex-wrap: nowrap;
+}
+
+
+/* Top alignment
+   ========================================================================== */
+
+.flag-object--top {
+  align-items: flex-start;
+}
+
+
+/* Bottom alignment
+   ========================================================================== */
+
+.flag-object--bottom {
+  align-items: flex-end;
+}
+
+
+/* Inline flag object
+   ========================================================================== */
+
+.flag-object--inline {
+  display: inline-flex;
+  flex-wrap: nowrap;
+
+  .flag-object__body {
+    flex-basis: auto;
+  }
+}

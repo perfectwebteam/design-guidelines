@@ -1,0 +1,19 @@
+/* Image
+   ========================================================================== */
+
+noscript + img {
+  display: block;
+  width: 100%;
+  min-width: 100%;
+  filter: blur(32px);
+  @include transition(filter);
+}
+
+.no-js noscript + img {
+  display: none;
+  filter: blur(0);
+}
+
+.lazyloaded {
+  filter: blur(0);
+}

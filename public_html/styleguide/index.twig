@@ -1,0 +1,70 @@
+{% extends '_base/layout.twig' %}
+
+{% set config %}
+    {% include 'styleguide/config.json' %}
+{% endset %}
+
+{% set title = 'Styleguide: ' ~ siteName %}
+{% set pages = config|json_decode.pages %}
+
+{% block bodyContent %}
+    <!-- Settings -->
+    <div class="styleguide-settings">
+        <button class="sg-menu-button js-toggle-menu">Navigation</button>
+        <button class="sg-menu-button js-toggle-grid" type="button">Grid</button>
+        <button class="sg-menu-button js-toggle-markup sg-markup-hidden" type="button">Markup</button>
+    </div>
+
+    <div class="styleguide">
+        <!-- Navigation -->
+        <div class="styleguide-navigation">
+            <div class="styleguide-navigation__inner">
+                <ul data-tabs>
+                    <li>
+                        <a data-tabby-default href="#home">
+                            <img class="styleguide-logo"
+                                 src="{{ siteUrl }}assets/images/logo.png"
+                                 alt="Logo van {{ siteName }}"
+                            />
+                        </a>
+                    </li>
+                    {% for page in pages %}
+                        <li>
+                            <a href="#{{ page|lower }}">{{ page }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <!-- Body -->
+        <div class="styleguide-body">
+            <div class="container">
+                <div class="sg-content" id="home">
+                    {% include 'styleguide/_pages/home.twig' %}
+                </div>
+                {% for page in pages %}
+                    <div class="sg-content" id="{{ page|lower }}">
+                        {% include 'styleguide/_pages/' ~ page|lower ~ '.twig' %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block pageAssets %}
+    {% css assetsUrl ~ 'css/styleguide.css' with {type: 'text/css'} %}
+    {% css 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.6/build/styles/default.min.css' with {type: 'text/css'} %}
+    {% css 'https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css' with {type: 'text/css'} %}
+
+    {% js 'https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js' %}
+    {% js 'https://cdn.jsdelivr.net/gh/cferdinandi/tabby@12/dist/js/tabby.polyfills.min.js' %}
+    {% js 'https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js' %}
+    {% js 'https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@4/dist/gumshoe.polyfills.min.js' %}
+    {% js 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.6/build/highlight.min.js' %}
+    {% js 'https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js' %}
+    {% js 'https://cdn.jsdelivr.net/npm/toastr@2.1.4/toastr.min.js' %}
+    {% js assetsUrl ~ 'js/styleguide.js' %}
+{% endblock %}

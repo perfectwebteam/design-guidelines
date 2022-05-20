@@ -1,0 +1,21 @@
+// ==========================================================================
+// Base functions
+// ==========================================================================
+
+
+// Calculate width
+// ==========================================================================
+// Calculates which width to set for an element using the root settings
+
+@use "sass:math";
+
+@function calculatewidth($span) {
+  $spanAmount: math.div(12, $span);
+  $columnGutter: ($spanAmount - 1) * $root-grid-spacing;
+  $columnWidth: math.div($design-width - $columnGutter, $spanAmount);
+  @return $columnWidth;
+}
+
+@function replaceunit($amount) {
+  @return strip-unit($amount) * 1rem;
+}

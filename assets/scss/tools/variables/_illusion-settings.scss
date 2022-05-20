@@ -1,0 +1,101 @@
+// Illusion settings
+// No !default since we're overriding
+// ==========================================================================
+
+// Grid
+$illusion-grid-type: flex;
+$illusion-grid-breakpoints: (
+  default: (
+    width:    0,
+    gutter:   1rem
+  ),
+  bravo: (
+    width:    38em,
+    gutter:   2rem
+  ),
+  delta: (
+    width:    64em,
+    gutter:   2.25rem
+  )
+) !default;
+$illusion-breakpoint-type:em;
+
+// Fluid property
+$illusion-fluid-property-min-value: px(16, em);
+$illusion-fluid-property-max-value: px(20, em);
+$illusion-fluid-property-min-screen: $content-width;
+$illusion-fluid-property-max-screen: $site-width;
+$illusion-fluid-property-clamp: true;
+
+// Atoms
+$illusion-extendalize-address-margin-top: 0;
+$illusion-extendalize-body-font-size: inherit;
+$illusion-extendalize-body-line-height: inherit;
+$illusion-extendalize-last-children-direction: top;
+
+$illusion-extendalize-address-margin-top: 1.5em;
+$illusion-extendalize-address-margin-bottom: 0;
+$illusion-extendalize-figure-margin-top: 1.5em;
+$illusion-extendalize-figure-margin-bottom: 0;
+$illusion-extendalize-heading-margin-top: 1.5em;
+$illusion-extendalize-heading-margin-bottom: 0;
+$illusion-extendalize-list-margin-top: 1.5em;
+$illusion-extendalize-list-margin-bottom: 0;
+$illusion-extendalize-paragraph-margin-top: 1.5em;
+$illusion-extendalize-paragraph-margin-bottom: 0;
+
+// Form
+$form-border-width: 1px;
+$illusion-form-input-border-radius: 0;
+$illusion-form-input-focus-outline: none;
+$illusion-form-group-margin: 1em;
+$illusion-form-border-width: $form-border-width;
+$illusion-form-input-line-height: 1;
+$illusion-extendalize-legend-margin-bottom: .25em;
+
+// Custom select
+$illusion-custom-select-height: 2.4rem;
+$illusion-custom-select-line-height: inherit;
+$illusion-custom-select-width: 100%;
+$illusion-custom-select-font-size: 1em;
+$illusion-custom-select-padding-top: 0;
+$illusion-custom-select-padding-bottom: 0;
+$illusion-custom-select-padding-left: .75rem;
+$illusion-custom-select-arrow-right: .75em;
+$illusion-custom-select-padding-right: 2em;
+$illusion-custom-select-arrow-size: .35em;
+$illusion-custom-select-color: #333;
+$illusion-custom-select-border: 1px solid;
+
+// Multiple choice
+$illusion-override-multiple-choice-size: 1.4em;
+$illusion-multiple-choice-float: none;
+$illusion-multiple-choice-bravo-float: none;
+$illusion-multiple-choice-label-display: inline-flex;
+$illusion-multiple-choice-margin-bottom: .75em;
+$illusion-multiple-choice-label-padding: 0 1em;
+$illusion-multiple-choice-padding: 0 0 0 $illusion-override-multiple-choice-size;
+$illusion-multiple-choice-min-height: $illusion-override-multiple-choice-size;
+$illusion-multiple-choice-input-width: $illusion-override-multiple-choice-size;
+$illusion-multiple-choice-input-height: $illusion-override-multiple-choice-size;
+$illusion-multiple-choice-label-min-height: $illusion-override-multiple-choice-size;
+$illusion-multiple-choice-label-before-width: $illusion-override-multiple-choice-size;
+$illusion-multiple-choice-label-before-height: $illusion-override-multiple-choice-size;
+$illusion-multiple-choice-label-after-size: $illusion-override-multiple-choice-size * .8;
+$illusion-multiple-choice-label-before-border: 1px solid;
+$illusion-multiple-choice-label-after-border: calc((#{($illusion-override-multiple-choice-size * 0.5) - (#{$form-border-width * 3})})) solid;
+$illusion-multiple-choice-label-radio-after-top: .2em;
+$illusion-multiple-choice-label-radio-after-left: .2em;
+$illusion-multiple-choice-label-checkbox-after-border-width: 0 0 ($illusion-override-multiple-choice-size * .135) ($illusion-override-multiple-choice-size * .135);
+$illusion-multiple-choice-label-checkbox-after-width: $illusion-override-multiple-choice-size * .55;
+$illusion-multiple-choice-label-checkbox-after-height: $illusion-override-multiple-choice-size * .3;
+$illusion-multiple-choice-label-checkbox-after-top: $illusion-override-multiple-choice-size * .3;
+$illusion-multiple-choice-label-checkbox-after-left: $illusion-override-multiple-choice-size * .25;
+$illusion-multiple-choice-label-radio-after-width: 1em;
+$illusion-multiple-choice-label-radio-after-height: 1em;
+
+// Selectors
+$illusion-form-selector: ".form";
+$illusion-form-group-selector: ".form__group";
+$illusion-form-label-selector: ".form__label";
+$illusion-form-input-selector: ".form__input";

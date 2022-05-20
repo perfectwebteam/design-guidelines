@@ -1,0 +1,9 @@
+// Variables that will actually compile code, wrapped inside variable to be
+// able to exclude when compiling separate files
+// Set !global since we're inside a variable
+// ==========================================================================
+
+$illusion-extendalize:                true !default;
+$illusion-extendalize-last-children:  true !default;
+$illusion-custom-select:              true !default;
+$illusion-multiple-choice:            true !default;

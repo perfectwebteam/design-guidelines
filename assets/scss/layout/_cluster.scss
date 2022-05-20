@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Cluster
+   ========================================================================== */
+
+.cluster {
+  @include cluster();
+}
+
+.cluster,
+[class*="cluster:"] {
+  padding-left: 0;
+  list-style: none;
+
+  .cluster,
+  & >[class*="cluster:"] {
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+}
+
+
+/* Sizes
+   ========================================================================== */
+
+.cluster\:xxs {
+  @include cluster(.25rem);
+}
+
+.cluster\:xs {
+  @include cluster(.5rem);
+}
+
+
+/* Modifiers
+   ========================================================================== */
+
+.cluster--inline {
+  display: inline-flex;
+}
+
+.cluster--fill {
+  justify-content: space-between;
+}
+
+.cluster--stretch {
+  justify-content: stretch;
+
+  & > * {
+    flex-grow: 1;
+  }
+}
+
+.cluster--center {
+  justify-content: center;
+}
+
+.cluster--nowrap {
+  flex-wrap: nowrap;
+}
+
+.cluster--end {
+  justify-content: flex-end;
+}

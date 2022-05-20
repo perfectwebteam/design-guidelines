@@ -1,0 +1,24 @@
+<div class="styleguide-intro">
+    {% if switcher is defined %}
+        <div class="sg-switcher-buttons js-content-switcher-buttons">
+            {% for switch in switcher %}
+                <button class="js-content-switcher{% if loop.first %} sg-is-active{% endif %}"
+                        type="button">{{ switch }}</button>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <div class="sg-h1">{{ title }}</div>
+
+    <div class="sg-description">
+        {% if notices is defined %}
+            {% for notice in notices %}
+                <p class="sg-notice">{{ notice|raw }}</p>
+            {% endfor %}
+        {% endif %}
+
+        {% if description is defined %}
+            <p>{{ description|raw }}</p>
+        {% endif %}
+    </div>
+</div>

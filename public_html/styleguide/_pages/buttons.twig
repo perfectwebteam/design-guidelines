@@ -1,0 +1,173 @@
+{% include 'styleguide/_partials/intro.twig' with  {
+    'title': 'Buttons',
+    'description': 'Only use the button class for actual <code>' ~ ('<button>')|e ~ '</code> or <code>' ~ ('<a>')|e ~ '</code> elements.'
+} only %}
+
+
+{% include 'styleguide/_partials/item.twig' with {
+    'title': 'Blue',
+    'description': '',
+    'partialPath': '_partials/button.twig',
+    'partialAttributes': {
+        'type': 'a',
+        'title': 'Blue button',
+        'link': '#',
+        'modifiers': ['blue']
+    }
+} only %}
+
+{% include 'styleguide/_partials/item.twig' with {
+    'title': 'Yellow',
+    'description': '',
+    'partialPath': '_partials/button.twig',
+    'partialAttributes': {
+        'type': 'a',
+        'title': 'Yellow button',
+        'link': '#',
+        'modifiers': ['yellow']
+    }
+} only %}
+
+{% include 'styleguide/_partials/item.twig' with {
+    'title': 'White',
+    'description': '',
+    'wrapInside': '<div class="background:darkish-blue padding">...</div>',
+    'partialPath': '_partials/button.twig',
+    'partialAttributes': {
+        'type': 'a',
+        'title': 'White button',
+        'link': '#',
+        'modifiers': ['white'],
+    }
+} only %}
+
+{% include 'styleguide/_partials/item.twig' with {
+    'title': 'Success',
+    'description': '',
+    'partialPath': '_partials/button.twig',
+    'partialAttributes': {
+        'type': 'a',
+        'title': 'Success button',
+        'link': '#',
+        'modifiers': ['success'],
+    }
+} only %}
+
+{% include 'styleguide/_partials/item.twig' with {
+    'title': 'Neutral',
+    'description': '',
+    'partialPath': '_partials/button.twig',
+    'partialAttributes': {
+        'type': 'a',
+        'title': 'Neutral button',
+        'link': '#',
+        'modifiers': ['neutral'],
+    }
+} only %}
+
+{% include 'styleguide/_partials/item.twig' with {
+    'title': 'Text button',
+    'description': '',
+    'partialPath': '_partials/button.twig',
+    'partialAttributes': {
+        'type': 'a',
+        'title': 'Text button',
+        'link': '#',
+        'icon': 'arrow-right',
+        'iconPosition': 'after',
+        'modifiers': ['text']
+    }
+} only %}
+
+{% include 'styleguide/_partials/item.twig' with {
+    'title': 'Fat button',
+    'description': '',
+    'partialPath': '_partials/button.twig',
+    'partialAttributes': {
+        'type': 'a',
+        'title': 'Fat button',
+        'link': '#',
+        'modifiers': ['fat', 'yellow']
+    }
+} only %}
+
+{% include 'styleguide/_partials/item.twig' with {
+    'title': 'Block level button',
+    'description': '',
+    'partialPath': '_partials/button.twig',
+    'partialAttributes': {
+        'type': 'a',
+        'title': 'Block level button',
+        'link': '#',
+        'modifiers': ['block', 'blue']
+    }
+} only %}
+
+{% include 'styleguide/_partials/item.twig' with {
+    'title': 'Mini button',
+    'description': '',
+    'partialPath': '_partials/button.twig',
+    'partialAttributes': {
+        'type': 'a',
+        'title': 'Mini button',
+        'link': '#',
+        'modifiers': ['mini', 'blue']
+    }
+} only %}
+
+{% include 'styleguide/_partials/item.twig' with {
+    'title': 'Small button',
+    'description': '',
+    'partialPath': '_partials/button.twig',
+    'partialAttributes': {
+        'type': 'a',
+        'title': 'Small button',
+        'link': '#',
+        'modifiers': ['small', 'blue']
+    }
+} only %}
+
+{% include 'styleguide/_partials/item.twig' with {
+    'title': 'Medium button',
+    'description': '',
+    'partialPath': '_partials/button.twig',
+    'partialAttributes': {
+        'type': 'a',
+        'title': 'Medium button',
+        'link': '#',
+        'modifiers': ['medium', 'blue']
+    }
+} only %}
+
+{% include 'styleguide/_partials/item.twig' with {
+    'title': 'Round button',
+    'description': '',
+    'partialPath': '_partials/button.twig',
+    'partialAttributes': {
+        'type': 'a',
+        'title': 'AG',
+        'link': '#',
+        'modifiers': ['round', 'blue']
+    }
+} only %}
+
+{% include 'styleguide/_partials/item.twig' with {
+    'title': 'Round icon-only button',
+    'description': '',
+    'partialPath': '_partials/button.twig',
+    'partialAttributes': {
+        'type': 'a',
+        'title': 'Title will act as tooltip on hover',
+        'icon': 'plus',
+        'link': '#',
+        'modifiers': ['round', 'icon-only', 'blue']
+    }
+} only %}
+
+
+{% include 'styleguide/_partials/item.twig' with {
+    'title': 'Link',
+    'description': 'Not really a button. Differs from <code>button--text</code> since this is only adding text-decoration, cursor and color values. No paddings and sizes are set.',
+    'markup': '<button type="button" class="link">Button styled as a link</button>',
+    'class': 'link'
+} only %}

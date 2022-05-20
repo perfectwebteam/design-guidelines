@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/* Font size
+   ========================================================================== */
+
+.font-size\:xxl {
+  @include font-size("xxl");
+}
+
+.font-size\:xl {
+  @include font-size("xl");
+}
+
+.font-size\:l {
+  @include font-size("l");
+}
+
+.font-size\:m {
+  @include font-size("m");
+}
+
+.font-size\:s {
+  @include font-size("s");
+}
+
+.font-size\:xs {
+  @include font-size("xs");
+}
+
+.font-size\:xxs {
+  @include font-size("xxs");
+}
+
+
+/* Font weight
+   ========================================================================== */
+
+.font-weight\:normal {
+  font-weight: $weight-normal;
+}
+
+.font-weight\:bold {
+  font-weight: $weight-bold;
+}
+
+
+/* Alignment
+   ========================================================================== */
+
+.align\:center {
+  text-align: center;
+}
+
+.align\:right {
+  text-align: right;
+}
+
+.align\:left {
+  text-align: left;
+}
+
+
+/* Style
+   ========================================================================== */
+
+.italic {
+  font-style: italic;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.balance-text {
+  text-wrap: balance;  /* Proposed CSS style, JS polyfill in place currently */
+}

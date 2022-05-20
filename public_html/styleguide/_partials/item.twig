@@ -1,0 +1,150 @@
+{#
+Variables available for including
+
+- title				title of the block
+- description		Description of the block
+- wrapInside		Text to display on the button
+- partialPath		Path of partial to include
+- partialAttributes	Partial attributes
+- markup			Markup to display
+- class				css class to include
+- scss				scss to include
+#}
+
+{% set beforeWrap = '' %}
+{% set afterWrap = '' %}
+
+{% if wrapInside is defined %}
+    {% set wraps = wrapInside|split('...', 2) %}
+    {% set beforeWrap = wraps[0] %}
+    {% set afterWrap = wraps[1] %}
+{% endif %}
+
+{% set partialCode = null %}
+{% set markupCode = null %}
+{% set scssCode = null %}
+{% set classCode = null %}
+{% set example = null %}
+
+{# Partial #}
+{% if partialPath is defined %}
+    {% set partialCode = '{% include \'' ~ partialPath ~ '\' with ' ~ (partialAttributes|json_encode(constant('JSON_PRETTY_PRINT'))|replace('"','\'')|raw) ~ ' only %}' %}
+    {% set example %}
+        {{ beforeWrap|raw }}
+        {% include partialPath with partialAttributes %}
+        {{ afterWrap|raw }}
+    {% endset %}
+{% endif %}
+
+{# Markup #}
+{% if markup is defined %}
+    {% set markupCode = markup %}
+    {% set example = beforeWrap|raw ~ markup ~ afterWrap|raw %}
+{% endif %}
+
+{# SCSS #}
+{% if scss is defined %}
+    {% set scssCode = scss|raw %}
+    {% set example = beforeWrap|raw ~ scss ~ afterWrap|raw %}
+{% endif %}
+
+{# Class #}
+{% if class is defined %}
+    {% set classCode = class %}
+    {% set example = beforeWrap|raw ~ markup ~ afterWrap|raw %}
+{% endif %}
+
+{% set target = title|kebab|ascii %}
+
+<div class="styleguide-item">
+    <div class="styleguide-example">
+        <div class="sg-title-wrapper">
+            <div class="sg-title">{{ title }}</div>
+            <div class="sg-copy-buttons">
+                {% if partialCode %}
+                    <button type="button" data-clipboard data-clipboard-target="#partialcode-{{ target }}">
+                        Copy partial
+                    </button>
+                {% endif %}
+
+                {% if markupCode %}
+                    <button type="button" data-clipboard data-clipboard-target="#markupcode-{{ target }}">
+                        Copy markup
+                    </button>
+                {% endif %}
+
+                {% if scssCode %}
+                    <button type="button" data-clipboard data-clipboard-target="#scsscode-{{ target }}">
+                        Copy SCSS
+                    </button>
+                {% endif %}
+
+                {% if classCode %}
+                    <button type="button" data-clipboard data-clipboard-target="#classcode-{{ target }}">
+                        Copy class
+                    </button>
+                {% endif %}
+
+                <button type="button" data-display-markup><span class="sg-visually-hidden">Show code</span>
+                    <svg class="sg-view-visible" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M.2 10a11 11 0 0 1 19.6 0A11 11 0 0 1 .2 10zm9.8 4a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
+                    </svg>
+                    <svg class="sg-view-hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M12.81 4.36l-1.77 1.78a4 4 0 0 0-4.9 4.9l-2.76 2.75C2.06 12.79.96 11.49.2 10a11 11 0 0 1 12.6-5.64zm3.8 1.85c1.33 1 2.43 2.3 3.2 3.79a11 11 0 0 1-12.62 5.64l1.77-1.78a4 4 0 0 0 4.9-4.9l2.76-2.75zm-.25-3.99l1.42 1.42L3.64 17.78l-1.42-1.42L16.36 2.22z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        {% if description is not empty %}
+            <div class="sg-description">
+                {{ description|raw }}
+            </div>
+        {% endif %}
+        {% if example %}
+            <div class="sg-example">
+                {{ example|raw }}
+            </div>
+        {% endif %}
+    </div>
+
+    {% if partialCode %}
+        <div class="styleguide-code sg-visually-hidden">
+            <div class="sg-h3">Partial</div>
+            <textarea id="partialcode-{{ target }}" class="sg-visually-hidden">{{ partialCode }}</textarea>
+            <div class="highlighted data-clipboard" data-clipboard-target="#partialcode-{{ target }}">
+                <pre><code>{{ partialCode }}</code></pre>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if markupCode %}
+        <div class="styleguide-code sg-visually-hidden">
+            <div class="sg-h3">Markup</div>
+            <textarea id="markupcode-{{ target }}" class="sg-visually-hidden">{{ markupCode }}</textarea>
+            <div class="highlighted data-clipboard" data-clipboard-target="#markupcode-{{ target }}">
+                <pre><code>{{ markupCode }}</code></pre>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if scssCode %}
+        <div class="styleguide-code sg-visually-hidden">
+            <div class="sg-h3">Include</div>
+            <textarea id="scsscode-{{ target }}" class="sg-visually-hidden">{{ scssCode }}</textarea>
+            <div class="highlighted data-clipboard" data-clipboard-target="#scsscode-{{ target }}">
+                <pre><code>{{ scssCode }}</code></pre>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if classCode %}
+        <div class="styleguide-code sg-visually-hidden">
+            <div class="sg-h3">Class</div>
+            <textarea id="classcode-{{ target }}" class="sg-visually-hidden">{{ classCode }}</textarea>
+            <div class="highlighted data-clipboard" data-clipboard-target="#classcode-{{ target }}">
+                <pre><code>{{ classCode }}</code></pre>
+            </div>
+        </div>
+    {% endif %}
+
+</div>

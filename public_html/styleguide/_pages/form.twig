@@ -1,0 +1,235 @@
+{% include 'styleguide/_partials/intro.twig' with  {
+    'title': 'Form',
+    'description': 'Basic form elements to use.'
+} only %}
+
+<div class="styleguide-section">
+    <div class="sg-h2">Fields</div>
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Form group',
+        'description': 'Group form elements like the label, input, hints etc. together.',
+        'markup': '<div class="form__group">...</div>'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Form field',
+        'description': '',
+        'markup': '<div class="form__group">
+		<label class="form__label" for="input-text-example">Field label</label>
+		<input class="form__input" id="input-text-example" name="input-text-example" type="text" />
+	</div>'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Select',
+        'description': '',
+        'markup': '<div class="form__group">
+	<label class="form__label" for="select-example">Field label</label>
+	<div class="custom-select">
+		<select id="example3" name="select-example">
+			<option value="option1">Option 1</option>
+			<option value="option2">Option 2</option>
+			<option value="option3">Option 3</option>
+			<option value="option4">Option 4</option>
+		</select>
+	</div>
+</div>'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Text area',
+        'description': '',
+        'markup': '<div class="form__group">
+		<label class="form__label" for="textarea-example">Field label</label>
+		<div class="form__hint" id="textarea-example-hint">Explanation for textarea</div>
+		<textarea class="form__input" rows="6" id="textarea-example" name="textarea-example" aria-describedby="textarea-example-hint"></textarea>
+	</div>'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Text area with counter',
+        'description': 'Simply add a <code>maxlength</code> attribute with the allowed maximum characters.',
+        'markup': '<div class="form__group">
+		<label class="form__label" for="textarea-example-count">Field label</label>
+		<div class="form__hint" id="textarea-example-count-hint">Add 160 characters or less</div>
+		<textarea class="form__input" rows="6" id="textarea-example-count" name="textarea-example-count" aria-describedby="textarea-example-count-hint" maxlength="160"></textarea>
+	</div>'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Checkboxes',
+        'description': '',
+        'markup': '<div class="form__group">
+	<fieldset aria-describedby="checkbox-example-hint">
+		<legend class="heading:xs">Checkbox options</legend>
+		<div class="form__hint" id="checkbox-example-hint">Explanation for options</div>
+		<div class="multiple-choice">
+			<input id="checkbox-example-1" name="checkbox-example" type="checkbox" value="option1">
+			<label for="checkbox-example-1">Option 1</label>
+		</div>
+		<div class="multiple-choice">
+			<input id="checkbox-example-2" name="checkbox-example" type="checkbox" value="option2">
+			<label for="checkbox-example-2">Option 2</label>
+		</div>
+		<div class="multiple-choice">
+			<input id="checkbox-example-3" name="checkbox-example" type="checkbox" value="option3">
+			<label for="checkbox-example-3">Option 3</label>
+		</div>
+	</fieldset>
+</div>'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Radios',
+        'description': '',
+        'markup': '<div class="form__group">
+	<fieldset aria-describedby="radio-example-hint">
+		<legend class="heading:xs">Radio options</legend>
+		<span class="form__hint" id="radio-example-hint">Explanation for options</span>
+		<div class="multiple-choice">
+			<input id="radio-example-1" name="radio-example" type="radio" value="option1">
+			<label for="radio-example-1">Option 1</label>
+		</div>
+		<div class="multiple-choice">
+			<input id="radio-example-2" name="radio-example" type="radio" value="option2">
+			<label for="radio-example-2">Option 2</label>
+		</div>
+		<div class="multiple-choice">
+			<input id="radio-example-3" name="radio-example" type="radio" value="option3">
+			<label for="radio-example-3">Option 3</label>
+		</div>
+	</fieldset>
+</div>'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Toggle',
+        'description': '',
+        'markup': '<div class="form__group">
+	<div class="form-toggle">
+		<input id="checkbox-toggle-1" name="checkbox-toggle-1" type="checkbox" value="option1">
+		<label for="checkbox-toggle-1">Option 1</label>
+	</div>
+</div>'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Toggle with added "off" styling',
+        'description': 'Styling for "off" mode as well.',
+        'markup': '<div class="form__group">
+	<div class="form-toggle form-toggle--!">
+		<input id="checkbox-toggle-2" name="checkbox-toggle-2" type="checkbox" value="option1">
+		<label for="checkbox-toggle-2">On and off styling</label>
+	</div>
+</div>'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Styled file input',
+        'description': '',
+        'markup': '<div class="form__group">
+	<div class="file-input styled-input">
+		<input id="styled-file-input" name="styled-file-input" class="js-file-input" type="file" data-multiple-caption="{count} bestanden geselecteerd" multiple>
+		<label for="styled-file-input">
+			<span class="file-input__button">Kies een bestand&hellip;</span>
+			<span class="file-input__files"></span>
+		</label>
+	</div>
+</div>'
+    } only %}
+</div>
+
+
+<div class="styleguide-section">
+    <div class="sg-h2">Groups</div>
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Input group',
+        'description': '',
+        'markup': '<fieldset class="form__group" aria-describedby="group-example-hint">
+		<legend class="heading:xs">Input group</legend>
+		<div class="form__hint" id="group-example-hint">Explanation</div>
+		<div class="form__input-group">
+			<input class="form__input" id="group-example-input" name="group-example-input" type="text" />
+			<button class="button" type="button">Button</button>
+		</div>
+	</fieldset>'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Large input group',
+        'description': '',
+        'markup': '<fieldset class="form__group" aria-describedby="group-example-hint4">
+		<legend class="heading:xs">Input group</legend>
+		<div class="form__hint" id="group-example-hint4">Explanation</div>
+		<div class="form__input-group form__input-group--large">
+			<input class="form__input" id="group-example-input4" name="group-example-input4" type="text" />
+			<button class="button" type="button">Button</button>
+		</div>
+	</fieldset>'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Inline input group',
+        'description': '<p class="notice">Attention: works only inside an element with a <code>data-inline-form</code> attribute (preferable a form element). Copying this styleguide example will give you a visual element only, no data will be saved anywhere, that needs to be done on a per item basis.</p>',
+        'markup': '<div class="form__input-group form__input-group--inline">
+			<input class="form__input" id="group-example-input2" name="group-example-input2" type="text" value="value" placeholder="placeholder" data-inline-input />
+			<button class="button" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 5.655L8.468 21.187 0 12.72l2.842-2.843 5.626 5.626 12.69-12.69L24 5.655z"></path></svg></button>
+			<span class="inline-form-message"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 5.655L8.468 21.187 0 12.72l2.842-2.843 5.626 5.626 12.69-12.69L24 5.655z"></path></svg> aangepast</span>
+		</div>',
+        'wrapInside': '<form data-inline-form>...</form>'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Styled form group',
+        'description': '',
+        'markup': '<div class="form__group form__group--styled">
+		<label class="form__label" for="styled-group">Label</label>
+		<input class="form__input" id="styled-group" name="styled-group" type="text" value="Example">
+	</div>'
+    } only %}
+
+</div>
+
+<div class="styleguide-section">
+    <div class="sg-h2">Block select</div>
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Block select',
+        'description': '',
+        'markup': '<div class="grid grid--size:s">
+		<ul class="inner">
+			<li class="block-select">
+				<input type="radio" id="block-select-1" name="block-select" />
+				<label for="block-select-1">Block</label>
+			</li>
+			<li class="block-select">
+				<input type="radio" id="block-select-2" name="block-select" />
+				<label for="block-select-2">Block</label>
+			</li>
+			<li class="block-select">
+				<input type="radio" id="block-select-3" name="block-select" />
+				<label for="block-select-3">Block</label>
+			</li>
+		</ul>
+	</div>'
+    } only %}
+
+</div>
+
+
+<div class="styleguide-section">
+    <div class="sg-h2">Filters</div>
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Filters',
+        'description': '',
+        'partialPath': '_partials/filters.twig',
+        'partialAttributes': {
+            'amount': '13',
+            'defaultOrder': 'dateup',
+        },
+        'wrapInside': '<div class="stack">...</div>'
+    } only %}
+</div>

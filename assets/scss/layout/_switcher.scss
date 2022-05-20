@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Switcher
+   ========================================================================== */
+
+// Variables
+$switcher-breakpoint: $wider-width !default;
+
+.switcher {
+  & > ul {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  & > * {
+    display: flex;
+    flex-wrap: wrap;
+    @include ms(margin-bottom, $illusion-ms-grid, -1);
+    @include ms(margin-left, $illusion-ms-grid, -1);
+  }
+
+  & > * > * {
+    flex-basis: calc((#{$switcher-width} - (100% - (#{$root-grid-spacing} * 1rem))) * 999);
+    flex-grow: 1;
+    @include ms(margin-bottom, $illusion-ms-grid-item, 1);
+    @include ms(margin-left, $illusion-ms-grid-item, 1);
+  }
+
+  &.gap\:s {
+    & > * {
+      @include ms(margin-bottom, $illusion-ms-grid, -.5);
+      @include ms(margin-left, $illusion-ms-grid, -.5);
+    }
+
+    & > * > * {
+      @include ms(margin-bottom, $illusion-ms-grid-item, .5);
+      @include ms(margin-left, $illusion-ms-grid-item, .5);
+    }
+  }
+
+  &.gap\:l {
+    & > * {
+      @include ms(margin-bottom, $illusion-ms-grid, -2);
+      @include ms(margin-left, $illusion-ms-grid, -2);
+    }
+
+    & > * > * {
+      @include ms(margin-bottom, $illusion-ms-grid-item, 2);
+      @include ms(margin-left, $illusion-ms-grid-item, 2);
+    }
+  }
+}
+
+
+.switcher--2\:1 {
+  > * > *:nth-child(1) {
+    flex-grow: $switcher-2to1-amount;
+  }
+}
+
+.switcher--1\:2 {
+  > * > *:nth-child(2) {
+    flex-grow: $switcher-2to1-amount;
+  }
+}

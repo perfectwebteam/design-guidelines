@@ -1,0 +1,116 @@
+{% include 'styleguide/_partials/intro.twig' with  {
+    'title': 'Color',
+    'description': 'Description',
+    'switcher': ['HEX','SCSS','Background','Color']
+} only %}
+
+<div class="styleguide-section">
+    <div class="sg-h2">Primary</div>
+    <div class="styleguide-item">
+        <div class="styleguide-color-container">
+            {% include 'styleguide/_partials/color.twig' with {
+                'title': 'Pale blue',
+                'scss': '$pale-blue',
+                'color': '#d8e9f4'
+            } %}
+
+            {% include 'styleguide/_partials/color.twig' with {
+                'title': 'Darkish blue',
+                'scss': '$darkish-blue',
+                'color': '#003d80'
+            } %}
+
+            {% include 'styleguide/_partials/color.twig' with {
+                'title': 'Orangish red',
+                'scss': '$orangish-red',
+                'color': '#ee4406'
+            } %}
+
+            {% include 'styleguide/_partials/color.twig' with {
+                'title': 'Cerulean',
+                'scss': '$cerulean',
+                'color': '#0089d2'
+            } %}
+
+            {% include 'styleguide/_partials/color.twig' with {
+                'title': 'Marigold',
+                'scss': '$marigold',
+                'color': '#fc0'
+            } %}
+        </div>
+    </div>
+</div>
+
+<div class="styleguide-section">
+    <div class="sg-h2">Support</div>
+    <div class="styleguide-item">
+        <div class="styleguide-color-container">
+            {% include 'styleguide/_partials/color.twig' with {
+                'title': 'Very light blue',
+                'scss': '$very-light-blue',
+                'color': '#f0f4f8'
+            } %}
+
+            {% include 'styleguide/_partials/color.twig' with {
+                'title': 'Sun yellow 80',
+                'scss': '$sun-yellow-80',
+                'color': 'rgba(#ffda26, .8)'
+            } %}
+
+            {% include 'styleguide/_partials/color.twig' with {
+                'title': 'Marigold light',
+                'scss': 'lighten($marigold, 35%)',
+                'color': '#fff0b3'
+            } %}
+        </div>
+    </div>
+</div>
+
+<div class="styleguide-section">
+    <div class="sg-h2">Neutral</div>
+    <div class="styleguide-item">
+        <div class="styleguide-color-container">
+            {% include 'styleguide/_partials/color.twig' with {
+                'title': 'Black',
+                'scss': '$black',
+                'color': '#333'
+            } %}
+
+            {% include 'styleguide/_partials/color.twig' with {
+                'title': 'Grey dark',
+                'scss': '$grey-dark',
+                'color': '#555'
+            } %}
+
+            {% include 'styleguide/_partials/color.twig' with {
+                'title': 'Grey',
+                'scss': '$grey',
+                'color': '#979797'
+            } %}
+
+            {% include 'styleguide/_partials/color.twig' with {
+                'title': 'Light grey',
+                'scss': '$light-grey',
+                'color': '#e0e0e0'
+            } %}
+
+            {% include 'styleguide/_partials/color.twig' with {
+                'title': 'Lighter grey',
+                'scss': '$lighter-grey',
+                'color': '#f3f3f3'
+            } %}
+
+            {% include 'styleguide/_partials/color.twig' with {
+                'title': 'Very light grey',
+                'scss': '$very-light-grey',
+                'color': '#f9f8f8'
+            } %}
+
+            {% include 'styleguide/_partials/color.twig' with {
+                'title': 'White',
+                'scss': '$white',
+                'color': '#fff'
+            } %}
+        </div>
+    </div>
+</div>

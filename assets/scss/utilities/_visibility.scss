@@ -1,0 +1,16 @@
+/* ==========================================================================
+   Visibility
+   ========================================================================== */
+
+.visually\:hidden {
+  @include visually-hidden();
+}
+
+.overflow\:hidden {
+  overflow: hidden;
+}
+
+.hidden.hidden,
+[hidden][hidden] {
+  display: none;
+}

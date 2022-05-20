@@ -1,0 +1,712 @@
+/* ==========================================================================
+   Illusion
+   ========================================================================== */
+
+@import "tools/tools";
+
+
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+$sg-sidebar-width: 20rem !default;
+$sg-sidebar-breakpoint: 64em !default;
+$sg-settings-height: 48px !default;
+
+
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+
+@mixin highlight() {
+  background: rgba(magenta, .1);
+  outline: 1px solid #f0f;
+  outline-offset: -1px;
+}
+
+
+/* ==========================================================================
+   Basic styling
+   ========================================================================== */
+
+body {
+  background: #fff;
+}
+
+pre {
+  margin: 0;
+}
+
+[data-toggle-tab] {
+  text-decoration: underline;
+  cursor: pointer;
+
+  @include hover() {
+    text-decoration: none;
+  }
+}
+
+
+/* ==========================================================================
+   Settings container
+   ========================================================================== */
+
+.styleguide-settings {
+  position: sticky;
+  top: 0;
+  z-index: 1000; // Win over grid
+  display: flex;
+  height: $sg-settings-height;
+  padding: 8px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  background: #333;
+
+  /* Toggle buttons */
+  .sg-menu-button {
+    @include reset();
+    align-self: center;
+    padding: 0 12px;
+    margin: 0 8px;
+    line-height: 30px;
+    color: inherit;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    @include transition(background);
+    @include pseudo(after) {
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: none;
+      height: 3px;
+      margin: 1px;
+      background: #389d33;
+      border-bottom-right-radius: 2px;
+      border-bottom-left-radius: 2px;
+    }
+
+    /* Move buttons to the right */
+    &:nth-child(2) {
+      margin-left: auto;
+    }
+
+    @include hover() {
+      background: #000;
+    }
+
+    &.is-active {
+      background: #000;
+
+      &::after {
+        display: block;
+      }
+    }
+  }
+}
+
+
+/* ==========================================================================
+   Sidebar toggle
+   ========================================================================== */
+
+.has-toggled-menu {
+  /* On "mobile" */
+  .styleguide {
+    width: 100%;
+    transform: translateX(0);
+
+    .styleguide-body {
+      z-index: 2;
+      margin-left: -($sg-sidebar-width);
+
+      // Show overlay and set pointer events from pseudo element */
+      &::after {
+        pointer-events: auto;
+        cursor: pointer;
+        opacity: .65;
+      }
+    }
+  }
+
+  /* Hide overlay grid container when checked on mobile */
+  .overlay-grid-container.overlay-grid-container {
+    visibility: hidden;
+  }
+
+  /* On "desktop" */
+  @include breakpoint($sg-sidebar-breakpoint) {
+    .styleguide {
+      width: calc(100% + #{$sg-sidebar-width});
+      transform: translateX(-($sg-sidebar-width));
+
+      .styleguide-body {
+        z-index: 1;
+        margin-left: 0;
+
+        // Hide overlay and remove pointer events from pseudo element */
+        &::after {
+          pointer-events: none;
+          opacity: 0;
+        }
+      }
+    }
+
+    & + .sidebar-toggle {
+      left: -($sg-sidebar-width);
+    }
+
+    /* Show overlay grid container when checked on mobile */
+    .overlay-grid-container.overlay-grid-container {
+      left: 0;
+      visibility: visible;
+    }
+  }
+}
+
+/* Set overlay grid position for sidebar */
+.overlay-grid-container.overlay-grid-container {
+  @include breakpoint($sg-sidebar-breakpoint) {
+    left: $sg-sidebar-width;
+  }
+
+  .overlay-grid {
+    outline: none;
+  }
+}
+
+
+/* ==========================================================================
+   Styleguide container
+   ========================================================================== */
+
+.styleguide {
+  display: flex;
+  width: calc(100% + #{$sg-sidebar-width});
+  transform: translateX(-($sg-sidebar-width));
+
+  @include breakpoint($sg-sidebar-breakpoint) {
+    width: 100%;
+    transform: none;
+  }
+}
+
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+
+.styleguide-navigation {
+  position: sticky;
+  top: $sg-settings-height;
+  z-index: 11;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: $sg-sidebar-width;
+  height: calc(100vh - #{$sg-settings-height});
+  padding: 16px;
+  font-size: 15px;
+  line-height: 1.5em;
+  text-align: center;
+  background: #eee;
+  overflow: auto;
+  border-right: 2px solid #ccc;
+
+  ul {
+    @include reset();
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+  }
+
+  li {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    &::before {
+      display: none;
+    }
+
+    ul {
+      display: none;
+
+      a {
+        padding-left: 2em;
+      }
+    }
+
+    [aria-selected="true"] + ul {
+      display: block;
+    }
+  }
+
+  a {
+    display: block;
+    padding: 8px;
+    text-align: left;
+    text-decoration: none;
+    border-radius: 2px;
+
+    @include hover() {
+      background: rgba(white, .5);
+    }
+
+    &:focus {
+      outline: 2px solid rgba(black, .2);
+    }
+  }
+
+  [aria-selected="true"] {
+    background: #fff;
+    box-shadow: 0 0 20px rgba(black, .075);
+  }
+
+  /* Logo */
+  [href="#home"] {
+    padding: 8px;
+    margin-bottom: 24px;
+    text-align: center;
+    background: #fff;
+    border-radius: 8px;
+
+    @include hover() {
+      background: #fff;
+      box-shadow: 0 0 25px rgba(black, .2);
+    }
+  }
+
+  .styleguide-logo {
+    height: 56px;
+  }
+
+  .active > a:not([aria-selected="true"]) {
+    font-weight: 700;
+  }
+}
+
+
+/* ==========================================================================
+   Body
+   ========================================================================== */
+
+.styleguide-body {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 auto;
+  padding: 2.5vw 0;
+  overflow: hidden; // To make sure flexbox items inside will behave properly
+
+  // Overlay for when sidebar is active
+  @include pseudo(after) {
+    @include coverall();
+    pointer-events: none;
+    background: #000;
+    opacity: 0;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  /* Content */
+  .sg-content {
+    @include contain();
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  /* Headings */
+  .sg-h1,
+  .sg-h2,
+  .sg-h3 {
+    line-height: 1.25em;
+  }
+
+  .sg-h1 {
+    @include fluid-property(font-size, px(22, false) * 1em, px(32, false) * 1em);
+    @include content-block(1em);
+  }
+
+  .sg-h2 {
+    @include fluid-property(font-size, px(20, false) * 1em, px(28, false) * 1em);
+    @include content-block(1em);
+  }
+
+  .sg-h3 {
+    @include fluid-property(font-size, px(18, false) * 1em, px(20, false) * 1em);
+    @include content-block(1em);
+  }
+
+  /* Description*/
+  .sg-description {
+    order: 2;
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+
+    & * + * {
+      margin-top: 1em;
+    }
+
+    & .sg-notice + .sg-notice {
+      margin-top: .75em;
+    }
+  }
+
+  hr {
+    height: 2px;
+    margin: 2em 0;
+    background: rgba(black, .2);
+    border: none;
+  }
+
+  code {
+    padding: 0 4px;
+    font-size: 14px;
+    line-height: inherit;
+    color: #cb4b16;
+    background: #eee;
+    box-shadow: 0 -3px 0 0 rgba(0, 0, 0, .1), 0 3px 0 0 rgba(0, 0, 0, .1);
+  }
+}
+
+
+/* ==========================================================================
+   Color and icon containers
+   ========================================================================== */
+
+.styleguide-color-container,
+.styleguide-icon-container {
+  display: grid;
+  grid-gap: 2.5vw;
+  @include content-block(2vw);
+}
+
+/* Color container */
+.styleguide-color-container {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+/* Icon container */
+.styleguide-icon-container {
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  text-align: center;
+
+  svg {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* Color / icon containers */
+.styleguide-color,
+.styleguide-icon {
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+/* Color container */
+.styleguide-color {
+  padding: 1vw;
+  box-shadow: inset 0 0 0 1px #fff;
+}
+
+/* Icon container */
+.styleguide-icon {
+  padding: 2vw 1vw 1.5vw;
+  background: #fff;
+  border-radius: 8px;
+}
+
+
+/* ==========================================================================
+   Intro and section containers
+   ========================================================================== */
+
+.styleguide-intro,
+.styleguide-section {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/**
+ * Intro
+ */
+.styleguide-intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  // Flexbox heading styling
+  [class^="sg-h"] {
+    flex: 1 1 auto;
+    order: 0;
+    margin-bottom: .5em;
+  }
+
+  // Flexbox button styling
+  .sg-switcher-buttons {
+    order: 1;
+    margin-left: auto;
+  }
+}
+
+/**
+ * Section
+ */
+.styleguide-section {
+  @include ms(padding-top, 1.75);
+  @include stack(ms($illusion-ms1));
+
+  .styleguide-item {
+    margin-top: 0;
+  }
+}
+
+
+/* ==========================================================================
+   Styleguide item
+   ========================================================================== */
+
+.styleguide-item {
+  @include ms(margin-top, 1);
+  @include ms(margin-right, -.5);
+  @include ms(margin-bottom, 1);
+  @include ms(margin-left, -.5);
+  @include ms(padding, .5);
+  background-color: rgba(black, .04);
+  background-repeat: no-repeat;
+  background-size: 100% 64px;
+  outline: 2px solid #ccc;
+  outline-offset: -1px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Styleguide title wrapper */
+.sg-title-wrapper {
+  display: flex;
+  @include content-block(1em);
+}
+
+/* Stylegudie title */
+.sg-title {
+  flex: 0 1 auto;
+  margin-right: auto;
+  @include fluid-property(font-size, px(16, false) * 1em, px(20, false) * 1em);
+  font-weight: 700;
+}
+
+/* Example container */
+.sg-example {
+  @include ms(margin-top, .5);
+  @include ms(margin-right, -.5);
+  @include ms(margin-bottom, -.5);
+  @include ms(margin-left, -.5);
+  background: #fff;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  @include ms(padding, .5);
+}
+
+/* Dark container */
+.sg-dark-section {
+  .sg-example {
+    background: #333;
+    outline: 1px solid #fff;
+    outline-offset: -2px;
+  }
+}
+
+/* Code container */
+.styleguide-code {
+  @include ms(margin-top, .5);
+  @include ms(padding-top, .5);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+
+/* ==========================================================================
+   Utility classes
+   ========================================================================== */
+
+.sg-visually-hidden.sg-visually-hidden {
+  @include visually-hidden();
+}
+
+/* Toggle markup visibility */
+.sg-view-hidden {
+  display: none;
+}
+
+[data-display-markup].is-active {
+  .sg-view-visible {
+    display: none;
+  }
+  .sg-view-hidden {
+    display: block;
+  }
+}
+
+
+/* ==========================================================================
+   Copy buttons
+   ========================================================================== */
+
+.sg-copy-buttons {
+  display: flex;
+
+  button {
+    @include reset();
+    display: inline-flex;
+    flex: 1 1 auto;
+    align-items: center;
+    padding: 4px 12px;
+    margin-left: -1px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #fff;
+    background-image: linear-gradient(to bottom, rgba(black, .05) 0%, rgba(black, .1) 100%);
+    border: 1px solid #ccc;
+    box-shadow: inset 1px 1px 0 rgba(white, .5);
+    @include transition(background-color);
+
+    &:first-child {
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+
+    @include hover() {
+      background-color: #eee;
+    }
+  }
+}
+
+
+/* ==========================================================================
+   Switcher buttons
+   ========================================================================== */
+
+.sg-switcher-buttons {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+
+  button {
+    @include reset();
+    flex: 1 1 auto;
+    padding: 4px 12px;
+    cursor: pointer;
+    background-color: #eee;
+    border: 1px solid #fff;
+    @include transition(background-color);
+
+    & + button {
+      margin-left: -1px;
+    }
+
+    &:first-child {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+    @include hover() {
+      background-color: #ddd;
+    }
+
+    &.sg-is-active {
+      color: #fff;
+      background-color: #3498db;
+    }
+  }
+}
+
+
+/* ==========================================================================
+   Styleguide highlighting
+   ========================================================================== */
+
+#layout {
+  .sg-example {
+    .stack > *:not([class*="flag-object"]),
+    .stack > [class*="flag-object"] > *,
+    .grid > * > *,
+    .has-sidebar > * > *,
+    .switcher > * > *,
+    [class*="flag-object"] > *,
+    [class*="cluster"] > *,
+    .contain,
+    [class*="max:"],
+    [class*="pull-up:"],
+    & > .center {
+      @include highlight();
+    }
+  }
+}
+
+#utilities {
+  .sg-example {
+    [class*="ratio:"] {
+      @include highlight();
+      max-width: 25vw;
+    }
+
+    /* No highlight include since outline doesn't work with radius */
+    [class*="radius:"] {
+      min-height: 48px;
+      background: rgba(magenta, .1);
+      border: 1px solid magenta;
+    }
+  }
+}
+
+/* Modular scale table */
+.modular-scale {
+  width: 320px;
+  max-width: 100%;
+}
+
+.enlighten {
+  border: 1px solid #f0f;
+}
+
+/* ==========================================================================
+   Toastr / notice
+   ========================================================================== */
+
+.sg-notice.sg-notice {
+  max-width: none;
+  padding: 8px 16px 8px 40px;
+  color: #fff;
+  @include svg-background('<path d="M2.93 17.07A10 10 0 1117.07 2.93 10 10 0 012.93 17.07zm12.73-1.41A8 8 0 104.34 4.34a8 8 0 0011.32 11.32zM9 5h2v6H9V5zm0 8h2v2H9v-2z"/>', white, 16, 16, 20, 20, left 12px top 50%);
+  background-color: #3498db;
+}
+
+/* Toastr adjustments */
+#toast-container#toast-container > .toast {
+  width: 100%;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  border-radius: 0;
+  box-shadow: 0 0 12px rgba(#000, .25);
+  opacity: 1;
+}

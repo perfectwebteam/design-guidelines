@@ -1,0 +1,13 @@
+/* ==========================================================================
+   Reduced motion
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    transition-duration: none !important;
+    animation: none !important;
+  }
+}

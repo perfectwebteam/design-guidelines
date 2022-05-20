@@ -1,0 +1,207 @@
+{% include 'styleguide/_partials/intro.twig' with  {
+    'title': 'Typography',
+    'notices': [
+        'The first heading on a page should always be an <code>' ~ ('<h1>')|e ~ '</code> with the class <code>heading:xl</code>',
+        'Only one <code>' ~ ('<h1>')|e ~ '</code> per page is allowed.'
+    ]
+} only %}
+
+<div class="styleguide-section">
+    <div class="sg-h2">Headings</div>
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Heading XL',
+        'description': 'ANWB TheSans: 700',
+        'markup': '<h2 class="heading:xl">Lorem ipsum dolor sit amet</h2>',
+        'scss': '@include heading("xl")',
+        'class': 'heading:xl'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Heading L',
+        'description': 'ANWB TheSans: 700',
+        'markup': '<h2 class="heading:l">Lorem ipsum dolor sit amet</h2>',
+        'scss': '@include heading("l")',
+        'class': 'heading:l'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Heading M',
+        'description': 'ANWB TheSans: 700',
+        'markup': '<h2 class="heading:m">Lorem ipsum dolor sit amet</h2>',
+        'scss': '@include heading("m")',
+        'class': 'heading:m'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Heading S',
+        'description': 'ANWB TheSans: 700',
+        'markup': '<h2 class="heading:s">Lorem ipsum dolor sit amet</h2>',
+        'scss': '@include heading("s")',
+        'class': 'heading:s'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Heading XS',
+        'description': 'ANWB TheSans: 700',
+        'markup': '<h2 class="heading:xs">Lorem ipsum dolor sit amet</h2>',
+        'scss': '@include heading("xs")',
+        'class': 'heading:xs'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Heading XXS',
+        'description': 'ANWB TheSans: 700',
+        'markup': '<h2 class="heading:xxs">Lorem ipsum dolor sit amet</h2>',
+        'scss': '@include heading("xxs")',
+        'class': 'heading:xxs'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Heading XXXS',
+        'description': 'ANWB TheSans: 700',
+        'markup': '<h2 class="heading:xxxs">Lorem ipsum dolor sit amet</h2>',
+        'scss': '@include heading("xxxs")',
+        'class': 'heading:xxxs'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Heading bar',
+        'description': '',
+        'markup': '<h2 class="heading:bar">
+	<div class="heading:bar__text">Lorem ipsum dolor sit amet</div>
+</h2>',
+    } only %}
+</div>
+
+
+<div class="styleguide-section">
+    <div class="sg-h2">Body text</div>
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Font size XL',
+        'description': 'ANWB TheSans: Regular 400',
+        'markup': '<p class="font-size:xl">Lorem ipsum dolor sit amet</p>',
+        'class': 'font-size:l'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Font size L',
+        'description': 'ANWB TheSans: Regular 400',
+        'markup': '<p class="font-size:l">Lorem ipsum dolor sit amet</p>',
+        'class': 'font-size:l'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Font size M+',
+        'description': 'ANWB TheSans: Regular 400',
+        'markup': '<p class="font-size:m+">Lorem ipsum dolor sit amet</p>',
+        'class': 'font-size:m+'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Font size S',
+        'description': 'ANWB TheSans: Regular 400',
+        'markup': '<p class="font-size:s">Lorem ipsum dolor sit amet</p>',
+        'class': 'font-size:s'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Font size XS',
+        'description': 'ANWB TheSans: Regular 400',
+        'markup': '<p class="font-size:xs">Lorem ipsum dolor sit amet</p>',
+        'class': 'font-size:xs'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Font size XXS',
+        'description': 'ANWB TheSans: Regular 400',
+        'markup': '<p class="font-size:xxs">Lorem ipsum dolor sit amet</p>',
+        'class': 'font-size:xxs'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Font size XXXS',
+        'description': 'ANWB TheSans: Regular 400',
+        'markup': '<p class="font-size:xxxs">Lorem ipsum dolor sit amet</p>',
+        'class': 'font-size:xxxs'
+    } only %}
+</div>
+
+
+<div class="styleguide-section">
+    <div class="sg-h2">Weight</div>
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Weight normal',
+        'description': 'Puts text in normal weight',
+        'markup': '<p class="font-weight:normal">Lorem ipsum dolor sit amet</p>',
+        'class': 'font-weight:normal'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Weight bold',
+        'description': 'Puts text in bold weight',
+        'markup': '<p class="font-weight:bold">Lorem ipsum dolor sit amet</p>',
+        'class': 'font-weight:bold'
+    } only %}
+</div>
+
+
+<div class="styleguide-section">
+    <div class="sg-h2">Alignment</div>
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Align center',
+        'description': 'Center text align',
+        'markup': '<p class="align:center">Lorem ipsum dolor sit amet</p>',
+        'class': 'align:center'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Align right',
+        'description': 'Right text align',
+        'markup': '<p class="align:right">Lorem ipsum dolor sit amet</p>',
+        'class': 'align:right'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Align left',
+        'description': 'Left text align',
+        'markup': '<p class="align:left">Lorem ipsum dolor sit amet</p>',
+        'class': 'align:left'
+    } only %}
+
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Balance text',
+        'description': 'Better line-breaks for lines that span multiple rows.',
+        'markup': '<h2 class="heading:xl balance-text">Lorem ipsum dolor sit amet consectetuer adipiscing elit.</h2>',
+        'class': 'balance-text'
+    } only %}
+</div>
+
+
+<div class="styleguide-section">
+    <div class="sg-h2">Style</div>
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Italic',
+        'description': 'Italic text',
+        'markup': '<p class="italic">Lorem ipsum dolor sit amet</p>',
+        'class': 'italic'
+    } only %}
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Nowrap',
+        'description': 'Do not wrap text',
+        'markup': '<p class="nowrap">Lorem ipsum dolor sit amet</p>',
+        'class': 'nowrap'
+    } only %}
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Notice',
+        'description': '',
+        'markup': '<p class="notice">Lorem ipsum dolor sit amet</p>',
+        'class': 'notice'
+    } only %}
+    {% include 'styleguide/_partials/item.twig' with {
+        'title': 'Ellipsis on two lines',
+        'description': '',
+        'markup': '<p class="ellipsis:2">Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>',
+        'class': 'ellipsis:2'
+    } only %}
+</div>

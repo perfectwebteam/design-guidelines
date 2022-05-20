@@ -1,0 +1,158 @@
+/* ==========================================================================
+   Form
+   ========================================================================== */
+
+
+/* Default elements
+   ========================================================================== */
+
+/**
+ * Label
+ */
+
+#{$illusion-form-label-selector} {
+  font-weight: $weight-bold;
+}
+
+
+/**
+ * Form input
+ */
+
+#{$illusion-form-input-selector} {
+  min-height: $illusion-custom-select-height;
+  border-radius: $radius-tiny;
+
+  &:focus {
+    box-shadow: 0 0 0 3px $color-focus;
+  }
+}
+
+textarea.form__input {
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+
+
+/**
+ * Custom Select
+ */
+
+.custom-select {
+  border-radius: $radius-tiny;
+
+  &:focus-within {
+    box-shadow: 0 0 0 3px $color-focus;
+  }
+}
+
+
+/* Input group
+   ========================================================================== */
+
+#{$form-group-selector} {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+
+  #{$illusion-form-label-selector},
+  #{$illusion-form-input-selector},
+  .button {
+    display: flex;
+    align-items: center;
+    border-radius: 0;
+
+    &:first-child {
+      border-top-left-radius: $radius-tiny;
+      border-bottom-left-radius: $radius-tiny;
+    }
+
+    &:last-child {
+      border-top-right-radius: $radius-tiny;
+      border-bottom-right-radius: $radius-tiny;
+    }
+  }
+
+  // Styling labels inside group
+  #{$illusion-form-label-selector} {
+    padding: 0 ms(-1);
+    color: rgba(black, .75);
+    background: rgba(#000, .25);
+    border: 1px solid;
+    @include font-size("s");
+  }
+
+  #{$illusion-form-input-selector} {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .custom-select {
+    flex: 1 1 auto;
+  }
+
+  // Re-work button inside group
+  .button {
+    height: auto;
+    margin-right: 0;
+    box-shadow: none;
+
+    &:focus {
+      box-shadow: 0 0 0 $form-focus-width $color-focus;
+    }
+  }
+
+  & > * {
+    position: relative;
+
+    &:focus {
+      z-index: 2;
+    }
+
+    // Overlap elements
+    & + * {
+      margin-left: -($form-border-width);
+    }
+  }
+}
+
+
+/* Errors
+   ========================================================================== */
+
+.form__errors {
+  padding: 1em;
+  margin-bottom: 2em;
+  color: #fff;
+  background-color: $color-error;
+  border-radius: .5em;
+}
+
+#{$form-group-error-selector} {
+  padding-left: ms(0);
+  margin-bottom: 2em;
+  border-left: ($form-border-width * 2) solid $color-error;
+
+  #{$illusion-form-label-selector} {
+    color: $color-error;
+  }
+
+  #{$illusion-form-input-selector} {
+    border-color: $color-error;
+    box-shadow: 0 0 0 $form-border-width $color-error;
+  }
+}
+
+.form__error {
+  display: flex;
+  align-items: center;
+  margin-top: -(ms(-3));
+  @include content-block(1em);
+  @include font-size("xs");
+  font-weight: $weight-bold;
+  color: $color-error;
+
+  svg {
+    margin-right: .75em;
+  }
+}

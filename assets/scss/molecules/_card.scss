@@ -1,0 +1,107 @@
+/* ==========================================================================
+   Card
+   ========================================================================== */
+
+.cards {
+  padding-left: 0;
+  list-style: none;
+
+  & > .card + .card {
+    margin-top: ms(1);
+  }
+}
+
+.is-clickable-card {
+  cursor: pointer;
+
+  *:not(a)[data-card-ignore]:not(button)[data-card-ignore] {
+    cursor: default;
+  }
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  @include font-size("s");
+
+  [class*="heading:"] {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  @media print {
+    page-break-inside: avoid;
+  }
+
+
+  /* Clickable card
+   ========================================================================== */
+
+  &.is-clickable-card {
+    cursor: pointer;
+
+    @include hover(true) {
+      [data-card-link] {
+        text-decoration: underline;
+
+        .link__text {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &:focus-within {
+      box-shadow: 0 0 0 3px $color-focus;
+    }
+  }
+}
+
+.card--aligned {
+  flex-wrap: nowrap;
+}
+
+.card__image {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 px(120);
+  overflow: hidden;
+
+  @supports (object-fit: cover) {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.card__body {
+  flex: 1 1 auto;
+  width: px(400);
+  max-width: 100%;
+  @include ms(padding, -1);
+}
+
+.card__heading,
+.card__footer {
+  @include ms(margin-right, -1, -1);
+  @include ms(margin-left, -1, -1);
+  @include ms(padding, -3);
+}
+
+.card__heading {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card__footer {
+  flex: 1 1 auto;
+}
+
+.card__content,
+.card__footer {
+  &:not(:first-child) {
+    margin-top: 1rem;
+  }
+}
