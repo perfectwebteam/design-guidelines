@@ -14,7 +14,7 @@ module.exports = options => {
 	if (file === 'scripts.concat.js') {
 		babel({
 			src: `${src}/${file}`,
-			dest: `${dest}/${file}`
+			dest: `${dest}/scripts.js`
 		})
 	}
 	

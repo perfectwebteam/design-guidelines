@@ -15,95 +15,81 @@
 
     {% include '_partials/item.twig' with {
         'title': 'margin-top:none',
-        'description': 'Margin top of 0',
+        'description': 'No margin top',
         'markup': false,
         'class': 'margin-top:none'
     } only %}
 
     {% include '_partials/item.twig' with {
-        'title': 'margin-top:s-2',
+        'title': 'margin-top:ms-4',
+        'description': 'Margin top using Modular scale of -4',
+        'markup': '<div class="margin-top:ms-4">Example</div>',
+        'class': 'margin-top:ms-4',
+        'wrapInside': '<div class="enlighten">...</div>'
+    } only %}
+
+    {% include '_partials/item.twig' with {
+        'title': 'margin-top:ms-3',
+        'description': 'Margin top using Modular scale of -3',
+        'markup': '<div class="margin-top:ms-3">Example</div>',
+        'class': 'margin-top:ms-3',
+        'wrapInside': '<div class="enlighten">...</div>'
+    } only %}
+
+    {% include '_partials/item.twig' with {
+        'title': 'margin-top:ms-2',
         'description': 'Margin top using Modular scale of -2',
-        'markup': '<div class="margin-top:s-2">Example</div>',
-        'class': 'margin-top:s-2',
+        'markup': '<div class="margin-top:ms-2">Example</div>',
+        'class': 'margin-top:ms-2',
         'wrapInside': '<div class="enlighten">...</div>'
     } only %}
 
     {% include '_partials/item.twig' with {
-        'title': 'margin-top:s0',
+        'title': 'margin-top:ms-1',
+        'description': 'Margin top using Modular scale of -1',
+        'markup': '<div class="margin-top:ms-1">Example</div>',
+        'class': 'margin-top:ms-1',
+        'wrapInside': '<div class="enlighten">...</div>'
+    } only %}
+
+    {% include '_partials/item.twig' with {
+        'title': 'margin-top:ms0',
         'description': 'Margin top using Modular scale of 0',
-        'markup': '<div class="margin-top:s0">Example</div>',
-        'class': 'margin-top:s0',
+        'markup': '<div class="margin-top:ms0">Example</div>',
+        'class': 'margin-top:ms0',
         'wrapInside': '<div class="enlighten">...</div>'
     } only %}
 
     {% include '_partials/item.twig' with {
-        'title': 'margin-top:s1',
+        'title': 'margin-top:ms1',
         'description': 'Margin top using Modular scale of 1',
-        'markup': '<div class="margin-top:s1">Example</div>',
-        'class': 'margin-top:s1',
+        'markup': '<div class="margin-top:ms1">Example</div>',
+        'class': 'margin-top:ms1',
         'wrapInside': '<div class="enlighten">...</div>'
     } only %}
 
     {% include '_partials/item.twig' with {
-        'title': 'margin-bottom:auto',
-        'description': 'Auto margin bottom',
-        'markup': false,
-        'class': 'margin-bottom:auto'
-    } only %}
-
-    {% include '_partials/item.twig' with {
-        'title': 'margin-bottom:0',
-        'description': 'Margin bottom using Modular scale of 0',
-        'markup': '<div class="margin-bottom:s0">Example</div>',
-        'class': 'margin-bottom:s0',
+        'title': 'margin-top:ms2',
+        'description': 'Margin top using Modular scale of 2',
+        'markup': '<div class="margin-top:ms2">Example</div>',
+        'class': 'margin-top:ms2',
         'wrapInside': '<div class="enlighten">...</div>'
     } only %}
 
     {% include '_partials/item.twig' with {
-        'title': 'margin-bottom:s2',
-        'description': 'Margin bottom using Modular scale of 2',
-        'markup': '<div class="margin-bottom:s2">Example</div>',
-        'class': 'margin-bottom:s2',
+        'title': 'margin-top:ms3',
+        'description': 'Margin top using Modular scale of 3',
+        'markup': '<div class="margin-top:ms3">Example</div>',
+        'class': 'margin-top:ms3',
         'wrapInside': '<div class="enlighten">...</div>'
     } only %}
 
     {% include '_partials/item.twig' with {
-        'title': 'margin-left:auto',
-        'description': 'Auto margin left',
-        'markup': false,
-        'class': 'margin-left:auto'
-    } only %}
-
-    {% include '_partials/item.twig' with {
-        'title': 'Next margin top: none',
-        'description': 'Removes top-margin of next sibling element.',
-        'markup': '<div>Example</div><div class="next-margin-top:none">Example</div><div>I don\'t have a top margin anymore.</div>',
-        'class': 'next-margin-top:none',
-        'wrapInside': '<div class="enlighten stack">...</div>'
-    } only %}
-
-    {% include '_partials/item.twig' with {
-        'title': 'Next margin top: -4',
-        'description': 'Adds a modular scale -4 top-margin to next sibling element.',
-        'markup': '<div>Example</div><div class="next-margin-top:-4">Example</div><div>My top margin is now a modular scale -4 margin.</div>',
-        'class': 'next-margin-top:-4',
-        'wrapInside': '<div class="enlighten stack">...</div>'
-    } only %}
-
-    {% include '_partials/item.twig' with {
-        'title': 'Next margin top: -2',
-        'description': 'Adds a modular scale -2 top-margin to next sibling element.',
-        'markup': '<div>Example</div><div class="next-margin-top:-2">Example</div><div>My top margin is now a modular scale -2 margin.</div>',
-        'class': 'next-margin-top:-2',
-        'wrapInside': '<div class="enlighten stack">...</div>'
-    } only %}
-
-    {% include '_partials/item.twig' with {
-        'title': 'Next margin top: 2',
-        'description': 'Adds a modular scale 2 top-margin to next sibling element.',
-        'markup': '<div>Example</div><div class="next-margin-top:2">Example</div><div>My top margin is now a modular scale 2 margin.</div>',
-        'class': 'next-margin-top:2',
-        'wrapInside': '<div class="enlighten stack">...</div>'
+        'title': 'margin-top:ms4',
+        'description': 'Margin top using Modular scale of 4',
+        'markup': '<div class="margin-top:ms4">Example</div>',
+        'class': 'margin-top:ms4',
+        'wrapInside': '<div class="enlighten">...</div>'
     } only %}
 </div>
 
@@ -120,58 +106,81 @@
     } only %}
 
     {% include '_partials/item.twig' with {
-        'title': 'padding-vertical',
-        'description': 'Sets a responsive padding on vertical sides of an element',
-        'markup': '<div class="padding-vertical">Example</div>',
-        'class': 'padding-vertical',
-        'wrapInside': '<div class="enlighten">...</div>'
-    } only %}
-
-    {% include '_partials/item.twig' with {
-        'title': 'padding-vertical:s3',
-        'description': 'Sets a responsive (modular scale 3) padding on vertical sides of an element',
-        'markup': '<div class="padding-vertical:s3">Example</div>',
-        'class': 'padding-vertical:s3',
-        'wrapInside': '<div class="enlighten">...</div>'
-    } only %}
-
-    {% include '_partials/item.twig' with {
-        'title': 'padding-horizontal',
-        'description': 'Sets a responsive padding on horizontal sides of an element',
-        'markup': '<div class="padding-horizontal">Example</div>',
-        'class': 'padding-horizontal',
-        'wrapInside': '<div class="enlighten">...</div>'
-    } only %}
-
-    {% include '_partials/item.twig' with {
         'title': 'padding-top:none',
-        'description': 'Padding top of 0',
+        'description': 'No padding top',
         'markup': false,
-        'class': 'padding-top:none',
+        'class': 'padding-top:none'
+    } only %}
+
+    {% include '_partials/item.twig' with {
+        'title': 'padding-top:ms-4',
+        'description': 'Padding top using Modular scale of -4',
+        'markup': '<div class="padding-top:ms-4">Example</div>',
+        'class': 'padding-top:ms-4',
         'wrapInside': '<div class="enlighten">...</div>'
     } only %}
 
     {% include '_partials/item.twig' with {
-        'title': 'padding-top:s0',
+        'title': 'padding-top:ms-3',
+        'description': 'Padding top using Modular scale of -3',
+        'markup': '<div class="padding-top:ms-3">Example</div>',
+        'class': 'padding-top:ms-3',
+        'wrapInside': '<div class="enlighten">...</div>'
+    } only %}
+
+    {% include '_partials/item.twig' with {
+        'title': 'padding-top:ms-2',
+        'description': 'Padding top using Modular scale of -2',
+        'markup': '<div class="padding-top:ms-2">Example</div>',
+        'class': 'padding-top:ms-2',
+        'wrapInside': '<div class="enlighten">...</div>'
+    } only %}
+
+    {% include '_partials/item.twig' with {
+        'title': 'padding-top:ms-1',
+        'description': 'Padding top using Modular scale of -1',
+        'markup': '<div class="padding-top:ms-1">Example</div>',
+        'class': 'padding-top:ms-1',
+        'wrapInside': '<div class="enlighten">...</div>'
+    } only %}
+
+    {% include '_partials/item.twig' with {
+        'title': 'padding-top:ms0',
         'description': 'Padding top using Modular scale of 0',
-        'markup': '<div class="padding-top:s0">Example</div>',
-        'class': 'padding-top:s0',
+        'markup': '<div class="padding-top:ms0">Example</div>',
+        'class': 'padding-top:ms0',
         'wrapInside': '<div class="enlighten">...</div>'
     } only %}
 
     {% include '_partials/item.twig' with {
-        'title': 'padding-bottom:none',
-        'description': 'Padding bottom of 0',
-        'markup': false,
-        'class': 'padding-bottom:none',
+        'title': 'padding-top:ms1',
+        'description': 'Padding top using Modular scale of 1',
+        'markup': '<div class="padding-top:ms1">Example</div>',
+        'class': 'padding-top:ms1',
         'wrapInside': '<div class="enlighten">...</div>'
     } only %}
 
     {% include '_partials/item.twig' with {
-        'title': 'padding-bottom:s0',
-        'description': 'Padding bottom using Modular scale of 0',
-        'markup': '<div class="padding-bottom:s0">Example</div>',
-        'class': 'padding-bottom:s0',
+        'title': 'padding-top:ms2',
+        'description': 'Padding top using Modular scale of 2',
+        'markup': '<div class="padding-top:ms2">Example</div>',
+        'class': 'padding-top:ms2',
+        'wrapInside': '<div class="enlighten">...</div>'
+    } only %}
+
+    {% include '_partials/item.twig' with {
+        'title': 'padding-top:ms3',
+        'description': 'Padding top using Modular scale of 3',
+        'markup': '<div class="padding-top:ms3">Example</div>',
+        'class': 'padding-top:ms3',
+        'wrapInside': '<div class="enlighten">...</div>'
+    } only %}
+
+    {% include '_partials/item.twig' with {
+        'title': 'padding-top:ms4',
+        'description': 'Padding top using Modular scale of 4',
+        'markup': '<div class="padding-top:ms4">Example</div>',
+        'class': 'padding-top:ms4',
         'wrapInside': '<div class="enlighten">...</div>'
     } only %}
 </div>
@@ -188,11 +197,40 @@
     } only %}
 
     {% include '_partials/item.twig' with {
-        'title': 'Sticky:top',
-        'description': 'Element will stick to the "top" of the document (just below the sticky header). This calss will not work when used inside an element with overflow:hidden',
+        'title': 'Absolute',
+        'description': 'Add <code>position: absolute</code>',
         'markup': false,
-        'class': 'sticky:top'
+        'class': 'position:absolute'
     } only %}
+
+    {% include '_partials/item.twig' with {
+        'title': 'Static',
+        'description': 'Add <code>position: static</code>',
+        'markup': false,
+        'class': 'position:static'
+    } only %}
+
+    {% include '_partials/item.twig' with {
+        'title': 'Z-index 1',
+        'description': 'Add <code>z-index: 1</code>',
+        'markup': false,
+        'class': 'z-index:1'
+    } only %}
+
+    {% include '_partials/item.twig' with {
+        'title': 'Z-index 2',
+        'description': 'Add <code>z-index: 2</code>',
+        'markup': false,
+        'class': 'z-index:2'
+    } only %}
+
+    {% include '_partials/item.twig' with {
+        'title': 'Z-index 3',
+        'description': 'Add <code>z-index: 3</code>',
+        'markup': false,
+        'class': 'z-index:3'
+    } only %}
+
 </div>
 
 
@@ -207,6 +245,13 @@
     } only %}
 
     {% include '_partials/item.twig' with {
+        'title': 'ratio:5:2',
+        'description': '',
+        'markup': '<div class="ratio:5:2">Example</div>',
+        'class': 'ratio:5:2'
+    } only %}
+
+    {% include '_partials/item.twig' with {
         'title': 'ratio:4:3',
         'description': '',
         'markup': '<div class="ratio:4:3">Example</div>',
@@ -214,10 +259,10 @@
     } only %}
 
     {% include '_partials/item.twig' with {
-        'title': 'ratio:3:1',
+        'title': 'ratio:3:2',
         'description': '',
-        'markup': '<div class="ratio:3:1">Example</div>',
-        'class': 'ratio:3:1'
+        'markup': '<div class="ratio:3:2">Example</div>',
+        'class': 'ratio:3:2'
     } only %}
 
     {% include '_partials/item.twig' with {
@@ -244,91 +289,5 @@
         'description': 'Hides overflowing content',
         'markup': false,
         'class': 'overflow:hidden'
-    } only %}
-
-    {% include '_partials/item.twig' with {
-        'title': 'Hide on mobile',
-        'description': 'Hides element until <code>$wider-width</code> variable',
-        'markup': false,
-        'class': 'hide-on-mobile'
-    } only %}
-
-    {% include '_partials/item.twig' with {
-        'title': 'Is hidden',
-        'description': 'Hides element completely',
-        'markup': false,
-        'class': 'is-hidden'
-    } only %}
-
-    {% include '_partials/item.twig' with {
-        'title': 'data-hidden',
-        'description': 'Hides element completely using data-hidden="true" attribute. Set attribute to "false" for visible. Useful in JS',
-        'markup': '<example data-hidden="true">...</example>'
-    } only %}
-</div>
-
-
-<div class="styleguide-section">
-    <div class="sg-h2">Styles</div>
-
-    {% include '_partials/item.twig' with {
-        'title': 'shaded',
-        'description': '',
-        'markup': '<div class="shaded">...</div>',
-        'class': 'shaded'
-    } only %}
-</div>
-
-
-<div class="styleguide-section">
-    <div class="sg-h2">Flex</div>
-
-    {% include '_partials/item.twig' with {
-        'title': 'flexrow',
-        'description': 'Adds <code>display: flex; flex-direction: row;</code>',
-        'markup': false,
-        'class': 'flexrow'
-    } only %}
-
-    {% include '_partials/item.twig' with {
-        'title': 'flexcol',
-        'description': 'Adds <code>display: flex; flex-direction: column;</code>',
-        'markup': false,
-        'class': 'flexcol'
-    } only %}
-
-    {% include '_partials/item.twig' with {
-        'title': 'self-end',
-        'description': 'Adds <code>margin-left: auto;</code> To be used within a flexbox parent to align element to the right.',
-        'markup': false,
-        'class': 'self-end'
-    } only %}
-
-    {% include '_partials/item.twig' with {
-        'title': 'flexcenter',
-        'description': 'A flexbox parent to center it\'s children both horizontally and vertically.',
-        'markup': false,
-        'class': 'flexcenter'
-    } only %}
-
-    {% include '_partials/item.twig' with {
-        'title': 'align-items: center',
-        'description': 'Align items centered horizontally or vertically based on flex-direction.',
-        'markup': false,
-        'class': 'align-items:center'
-    } only %}
-
-    {% include '_partials/item.twig' with {
-        'title': 'justify-content: space-between',
-        'description': 'Adss space ebtween flexbox children',
-        'markup': false,
-        'class': 'justify-content:space-between'
-    } only %}
-
-    {% include '_partials/item.twig' with {
-        'title': 'Flex',
-        'description': 'Adds <code>flex: 1 1 auto</code> to element',
-        'markup': false,
-        'class': 'flex'
     } only %}
 </div>

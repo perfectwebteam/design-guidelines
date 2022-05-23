@@ -2,6 +2,46 @@
    Padding
    ========================================================================== */
 
+.padding-top\:none {
+  padding-top: 0;
+}
+
+.padding-top\:ms-4 {
+  padding-top: ms(-4);
+}
+
+.padding-top\:ms-3 {
+  padding-top: ms(-3);
+}
+
+.padding-top\:ms-2 {
+  padding-top: ms(-2);
+}
+
+.padding-top\:ms-1 {
+  padding-top: ms(-1);
+}
+
+.padding-top\:ms0 {
+  padding-top: ms(0);
+}
+
+.padding-top\:ms1 {
+  padding-top: ms(1);
+}
+
+.padding-top\:ms2 {
+  padding-top: ms(2);
+}
+
+.padding-top\:ms3 {
+  padding-top: ms(3);
+}
+
+.padding-top\:ms4 {
+  padding-top: ms(4);
+}
+
 .padding.padding {
   @include ms(padding, 0);
 }

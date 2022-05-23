@@ -46,6 +46,8 @@ serve({
 		`${dest}/images/favicon/*.*`,
 		`${dest}/**/*.html`,
 		`${dest}/*.html`,
+		`${dest}/**/*.twig`,
+		`${dest}/*.twig`,
 		`${styleguide}/css`,
 	]
 })

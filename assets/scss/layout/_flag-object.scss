@@ -35,13 +35,13 @@
 /* Sizes
    ========================================================================== */
 
-.flag-object--scale\:-4 {
-  margin-bottom: -(ms(-4));
-  margin-left: -(ms(-4));
+.flag-object--scale\:-3 {
+  margin-bottom: -(ms(-3));
+  margin-left: -(ms(-3));
 
   & > [class*="flag-object__"] {
-    margin-bottom: ms(-4);
-    margin-left: ms(-4);
+    margin-bottom: ms(-3);
+    margin-left: ms(-3);
   }
 }
 

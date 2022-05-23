@@ -30,9 +30,21 @@
   @include cluster(.5rem);
 }
 
+.cluster\:s {
+  @include cluster(.75rem);
+}
+
+.cluster\:l {
+  @include cluster(1.5rem);
+}
+
 
 /* Modifiers
    ========================================================================== */
+
+.cluster--nowrap {
+  flex-wrap: nowrap;
+}
 
 .cluster--inline {
   display: inline-flex;
@@ -52,10 +64,6 @@
 
 .cluster--center {
   justify-content: center;
-}
-
-.cluster--nowrap {
-  flex-wrap: nowrap;
 }
 
 .cluster--end {

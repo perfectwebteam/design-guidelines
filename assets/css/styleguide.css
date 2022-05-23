@@ -361,7 +361,7 @@ pre {
   font-size: 16px;
   line-height: 24px;
 }
-.styleguide-body .sg-description * + * {
+.styleguide-body .sg-description > * + * {
   margin-top: 1em;
 }
 .styleguide-body .sg-description .sg-notice + .sg-notice {

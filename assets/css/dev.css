@@ -1,0 +1,74 @@
+/* A visual grid to show if elements are correctly inside the grid */
+html {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+}
+
+.overlay-grid-container {
+  position: fixed;
+  top: -1px;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  z-index: 999;
+  box-sizing: border-box;
+  height: calc(100% + 2px);
+  pointer-events: none;
+}
+
+.overlay-grid {
+  box-sizing: border-box;
+  display: grid;
+  width: 100%;
+  max-width: calc(75em - (1.5rem * -3));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: calc(1.5rem * 1.5);
+  padding-left: calc(1.5rem * 1.5);
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+  outline: 1px solid rgb(255, 0, 255);
+  outline-offset: -1px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: calc(1.5rem * 1.5);
+  grid-template-areas: ". . . . . . . . . . . .";
+}
+@supports (--css: variables) {
+  .overlay-grid {
+    max-width: calc(75em - (var(--spacing) * -2));
+  }
+}
+@supports (--css: variables) {
+  .overlay-grid {
+    padding-right: calc(var(--spacing) * 1);
+  }
+}
+@supports (--css: variables) {
+  .overlay-grid {
+    padding-left: calc(var(--spacing) * 1);
+  }
+}
+@supports (--css: variables) {
+  .overlay-grid {
+    gap: calc(var(--spacing) * 1);
+  }
+}
+
+.overlay-grid__item {
+  box-sizing: border-box;
+  height: 100%;
+  background: rgba(255, 0, 255, 0.1);
+  outline: 1px solid rgb(255, 0, 255);
+}
+
+/*
+ * Styling to make certain elements more visible inside the styleguide
+ * Add to the dev.css file since that is always loaded on the styleguide
+ */

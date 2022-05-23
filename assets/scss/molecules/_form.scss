@@ -7,11 +7,22 @@
    ========================================================================== */
 
 /**
+ * Group
+ */
+
+#{$illusion-form-group-selector} {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/**
  * Label
  */
 
 #{$illusion-form-label-selector} {
   font-weight: $weight-bold;
+  margin-bottom: .33em;
 }
 
 
@@ -22,6 +33,7 @@
 #{$illusion-form-input-selector} {
   min-height: $illusion-custom-select-height;
   border-radius: $radius-tiny;
+  border: 2px solid #333;
 
   &:focus {
     box-shadow: 0 0 0 3px $color-focus;
@@ -33,6 +45,11 @@ textarea.form__input {
   padding-bottom: .5em;
 }
 
+.form__hint {
+  display: block;
+  margin-bottom: .5em;
+}
+
 
 /**
  * Custom Select
@@ -40,6 +57,7 @@ textarea.form__input {
 
 .custom-select {
   border-radius: $radius-tiny;
+  border: 2px solid #333;
 
   &:focus-within {
     box-shadow: 0 0 0 3px $color-focus;

@@ -51,13 +51,6 @@
       font-size: $heading-xxl-font-size-1;
     }
   }
-  @if $size == "xxxl" {
-    @if ($heading-xxxl-font-size-1 != false and $heading-xxxl-font-size-1 != $heading-xxxl-font-size-2) {
-      @include fluid-property("font-size", $heading-xxxl-font-size-1, $heading-xxxl-font-size-2);
-    } @else if($heading-xxxl-font-size-1) {
-      font-size: $heading-xxxl-font-size-1;
-    }
-  }
 
   @if $defaults != false {
     font-family: $heading-font-family;

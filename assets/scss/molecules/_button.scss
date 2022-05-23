@@ -9,6 +9,8 @@
   text-decoration: none;
   @include heading("s", true);
   border-radius: $radius-small;
+  padding: .5em 1em;
+  @include transition(background-color);
 
   svg {
     &:not([width]) {
@@ -31,9 +33,43 @@
   .visually\:hidden + svg {
     margin-left: 0;
   }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px #ffc400;
+  }
+}
+
+.button--example1 {
+  color: $example1-type;
+  background-color: $example1;
+
+  @include hover() {
+    background-color: darken($example1, 5%);
+  }
+}
+
+.button--example2 {
+  color: $example2-type;
+  background-color: $example2;
+
+  @include hover() {
+    background-color: darken($example2, 5%);
+  }
 }
 
 .button--block {
   display: flex;
   width: 100%;
+}
+
+.button--l {
+  padding: .7em 1.4em;
+  border-radius: .5em;
+  @include heading("m");
+}
+
+.button--s {
+  padding: .33em .66em;
+  @include font-size("s");
 }

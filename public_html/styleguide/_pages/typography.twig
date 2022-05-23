@@ -11,7 +11,7 @@
 
     {% include '_partials/item.twig' with {
         'title': 'Heading XL',
-        'description': 'ANWB TheSans: 700',
+        'description': 'Lato Bold',
         'markup': '<h2 class="heading:xl">Lorem ipsum dolor sit amet</h2>',
         'scss': '@include heading("xl")',
         'class': 'heading:xl'
@@ -19,7 +19,7 @@
 
     {% include '_partials/item.twig' with {
         'title': 'Heading L',
-        'description': 'ANWB TheSans: 700',
+        'description': 'Lato Bold',
         'markup': '<h2 class="heading:l">Lorem ipsum dolor sit amet</h2>',
         'scss': '@include heading("l")',
         'class': 'heading:l'
@@ -27,7 +27,7 @@
 
     {% include '_partials/item.twig' with {
         'title': 'Heading M',
-        'description': 'ANWB TheSans: 700',
+        'description': 'Lato Bold',
         'markup': '<h2 class="heading:m">Lorem ipsum dolor sit amet</h2>',
         'scss': '@include heading("m")',
         'class': 'heading:m'
@@ -35,7 +35,7 @@
 
     {% include '_partials/item.twig' with {
         'title': 'Heading S',
-        'description': 'ANWB TheSans: 700',
+        'description': 'Lato Bold',
         'markup': '<h2 class="heading:s">Lorem ipsum dolor sit amet</h2>',
         'scss': '@include heading("s")',
         'class': 'heading:s'
@@ -43,34 +43,10 @@
 
     {% include '_partials/item.twig' with {
         'title': 'Heading XS',
-        'description': 'ANWB TheSans: 700',
+        'description': 'Lato Bold',
         'markup': '<h2 class="heading:xs">Lorem ipsum dolor sit amet</h2>',
         'scss': '@include heading("xs")',
         'class': 'heading:xs'
-    } only %}
-
-    {% include '_partials/item.twig' with {
-        'title': 'Heading XXS',
-        'description': 'ANWB TheSans: 700',
-        'markup': '<h2 class="heading:xxs">Lorem ipsum dolor sit amet</h2>',
-        'scss': '@include heading("xxs")',
-        'class': 'heading:xxs'
-    } only %}
-
-    {% include '_partials/item.twig' with {
-        'title': 'Heading XXXS',
-        'description': 'ANWB TheSans: 700',
-        'markup': '<h2 class="heading:xxxs">Lorem ipsum dolor sit amet</h2>',
-        'scss': '@include heading("xxxs")',
-        'class': 'heading:xxxs'
-    } only %}
-
-    {% include '_partials/item.twig' with {
-        'title': 'Heading bar',
-        'description': '',
-        'markup': '<h2 class="heading:bar">
-	<div class="heading:bar__text">Lorem ipsum dolor sit amet</div>
-</h2>',
     } only %}
 </div>
 
@@ -79,51 +55,37 @@
     <div class="sg-h2">Body text</div>
     {% include '_partials/item.twig' with {
         'title': 'Font size XL',
-        'description': 'ANWB TheSans: Regular 400',
+        'description': 'Lato Regular',
         'markup': '<p class="font-size:xl">Lorem ipsum dolor sit amet</p>',
         'class': 'font-size:l'
     } only %}
 
     {% include '_partials/item.twig' with {
         'title': 'Font size L',
-        'description': 'ANWB TheSans: Regular 400',
+        'description': 'Lato Regular',
         'markup': '<p class="font-size:l">Lorem ipsum dolor sit amet</p>',
         'class': 'font-size:l'
     } only %}
 
     {% include '_partials/item.twig' with {
-        'title': 'Font size M+',
-        'description': 'ANWB TheSans: Regular 400',
-        'markup': '<p class="font-size:m+">Lorem ipsum dolor sit amet</p>',
-        'class': 'font-size:m+'
+        'title': 'Font size M',
+        'description': 'Lato Regular',
+        'markup': '<p class="font-size:m">Lorem ipsum dolor sit amet</p>',
+        'class': 'font-size:m'
     } only %}
 
     {% include '_partials/item.twig' with {
         'title': 'Font size S',
-        'description': 'ANWB TheSans: Regular 400',
+        'description': 'Lato Regular',
         'markup': '<p class="font-size:s">Lorem ipsum dolor sit amet</p>',
         'class': 'font-size:s'
     } only %}
 
     {% include '_partials/item.twig' with {
         'title': 'Font size XS',
-        'description': 'ANWB TheSans: Regular 400',
+        'description': 'Lato Regular',
         'markup': '<p class="font-size:xs">Lorem ipsum dolor sit amet</p>',
         'class': 'font-size:xs'
-    } only %}
-
-    {% include '_partials/item.twig' with {
-        'title': 'Font size XXS',
-        'description': 'ANWB TheSans: Regular 400',
-        'markup': '<p class="font-size:xxs">Lorem ipsum dolor sit amet</p>',
-        'class': 'font-size:xxs'
-    } only %}
-
-    {% include '_partials/item.twig' with {
-        'title': 'Font size XXXS',
-        'description': 'ANWB TheSans: Regular 400',
-        'markup': '<p class="font-size:xxxs">Lorem ipsum dolor sit amet</p>',
-        'class': 'font-size:xxxs'
     } only %}
 </div>
 
@@ -151,22 +113,22 @@
     {% include '_partials/item.twig' with {
         'title': 'Align center',
         'description': 'Center text align',
-        'markup': '<p class="align:center">Lorem ipsum dolor sit amet</p>',
-        'class': 'align:center'
+        'markup': '<p class="text-align:center">Lorem ipsum dolor sit amet</p>',
+        'class': 'text-align:center'
     } only %}
 
     {% include '_partials/item.twig' with {
         'title': 'Align right',
         'description': 'Right text align',
-        'markup': '<p class="align:right">Lorem ipsum dolor sit amet</p>',
-        'class': 'align:right'
+        'markup': '<p class="text-align:right">Lorem ipsum dolor sit amet</p>',
+        'class': 'text-align:right'
     } only %}
 
     {% include '_partials/item.twig' with {
         'title': 'Align left',
         'description': 'Left text align',
-        'markup': '<p class="align:left">Lorem ipsum dolor sit amet</p>',
-        'class': 'align:left'
+        'markup': '<p class="text-align:left">Lorem ipsum dolor sit amet</p>',
+        'class': 'text-align:left'
     } only %}
 
     {% include '_partials/item.twig' with {
@@ -189,14 +151,8 @@
     {% include '_partials/item.twig' with {
         'title': 'Nowrap',
         'description': 'Do not wrap text',
-        'markup': '<p class="nowrap">Lorem ipsum dolor sit amet</p>',
+        'markup': '<p class="nowrap">Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>',
         'class': 'nowrap'
-    } only %}
-    {% include '_partials/item.twig' with {
-        'title': 'Notice',
-        'description': '',
-        'markup': '<p class="notice">Lorem ipsum dolor sit amet</p>',
-        'class': 'notice'
     } only %}
     {% include '_partials/item.twig' with {
         'title': 'Ellipsis on two lines',

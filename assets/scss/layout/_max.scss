@@ -3,35 +3,35 @@
    ========================================================================== */
 
 .max\:3 {
-  @include maxWidth(3);
+  max-width: replaceunit(calculatewidth(3));
 }
 
 .max\:4 {
-  @include maxWidth(4);
+  max-width: replaceunit(calculatewidth(4));
 }
 
 .max\:5 {
-  @include maxWidth(5);
+  max-width: replaceunit(calculatewidth(5));
 }
 
 .max\:6 {
-  @include maxWidth(6);
+  max-width: replaceunit(calculatewidth(6));
 }
 
 .max\:8 {
-  @include maxWidth(8);
+  max-width: replaceunit(calculatewidth(8));
 }
 
 .max\:10 {
-  @include maxWidth(10);
+  max-width: replaceunit(calculatewidth(10));
 }
 
 .max\:narrow {
-  max-width: $narrow-width;
+  max-width: replaceunit($narrow-width);
 }
 
 .max\:content {
-  max-width: $content-width;
+  max-width: replaceunit($content-width);
 }
 
 .max--center {

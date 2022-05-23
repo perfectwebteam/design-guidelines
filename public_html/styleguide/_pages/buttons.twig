@@ -2,3 +2,33 @@
     'title': 'Buttons',
     'description': 'Only use the button class for actual <code>' ~ ('<button>')|e ~ '</code> or <code>' ~ ('<a>')|e ~ '</code> elements.'
 } only %}
+
+{% include '_partials/item.twig' with {
+    'title': 'Button example 1',
+    'description': '',
+    'markup': '<a href="#" class="button button--example1"><span class="button__text">Example</span></a>'
+} only %}
+
+{% include '_partials/item.twig' with {
+    'title': 'Button example 2',
+    'description': '',
+    'markup': '<a href="#" class="button button--example2"><span class="button__text">Example</span></a>'
+} only %}
+
+{% include '_partials/item.twig' with {
+    'title': 'Button block',
+    'description': 'Spans the entire width of it\'s parent',
+    'markup': '<a href="#" class="button button--example1 button--block"><span class="button__text">Example</span></a>'
+} only %}
+
+{% include '_partials/item.twig' with {
+    'title': 'Button large',
+    'description': '',
+    'markup': '<a href="#" class="button button--example1 button--l"><span class="button__text">Example</span></a>'
+} only %}
+
+{% include '_partials/item.twig' with {
+    'title': 'Button small',
+    'description': '',
+    'markup': '<a href="#" class="button button--example1 button--s"><span class="button__text">Example</span></a>'
+} only %}

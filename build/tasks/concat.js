@@ -15,6 +15,7 @@ module.exports = options => {
 	if (file === 'scripts.js') {
 		concat({
 			src: [
+				'node_modules/balance-text/balancetext.min.js',
 				`${src}/scripts.js`
 			],
 			dest: `${dest}/scripts.concat.js`

@@ -1,0 +1,77 @@
+{% include '_partials/intro.twig' with  {
+    'title': 'Cards',
+    'notices': [
+        'When multiple cards are used in one container. Make sure to make the parent + cards an <code>ul > li</code>. If no other container is available (like a grid or switcher for example) you can use <code>.cards</code> as a class for the parent <code>ul</code>'
+    ]
+} only %}
+
+{% include '_partials/item.twig' with {
+    'title': 'Card',
+    'description': 'Basic card',
+    'markup': '<li class="card" data-card>
+	<div class="card__image">
+	    <div class="ratio:5:2">
+	        Image
+	    </div>
+	</div>
+	<div class="card__body">
+		<div class="card__content">
+		    <h3 class="heading:s">
+                <a href="#" data-card-link>
+                    A card heading
+                </a>
+		    </h3>
+		    <p>Some card content in the card body</p>
+		</div>
+	</div>
+</li>',
+    'wrapInside': '<div class="switcher">
+        <ul class="inner">
+            ...
+            <li class="card" data-card>
+                <div class="card__image">
+                    <div class="ratio:5:2">
+                        Image
+                    </div>
+                </div>
+                <div class="card__body">
+                    <div class="card__content">
+                        <h3 class="heading:s">
+                            <a href="#" data-card-link>
+                                A card heading
+                            </a>
+                        </h3>
+                        <p>Some card content in the card body</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>'
+} only %}
+
+{% include '_partials/item.twig' with {
+    'title': 'Card aligned',
+    'description': 'Card where image always stays on the left of the body',
+    'markup': '<li class="card card--aligned" data-card>
+	<div class="card__image">
+	    <div class="ratio:5:2">
+	        Image
+	    </div>
+	</div>
+	<div class="card__body">
+		<div class="card__content">
+		    <h3 class="heading:s">
+                <a href="#" data-card-link>
+                    A card heading
+                </a>
+		    </h3>
+		    <p>Some card content in the card body</p>
+		</div>
+	</div>
+</li>',
+    'wrapInside': '<div class="switcher">
+        <ul class="inner">
+            ...
+        </ul>
+    </div>'
+} only %}

@@ -72,8 +72,6 @@ var simulateClick = function (elem) {
 		cancelable: true,
 		view: window
 	});
-	// If cancelled, don't dispatch our event
-	var canceled = !elem.dispatchEvent(evt);
 };
 
 
@@ -235,7 +233,7 @@ var simulateClick = function (elem) {
 
 		// Display/hide the actual grid and set button class
 		function displayGrid(container, button) {
-			if (container.style.display == 'none') {
+			if (container.style.display === 'none') {
 				container.style.display = 'block';
 				setActive(button, 'grid');
 			} else {
@@ -331,6 +329,88 @@ var simulateClick = function (elem) {
 					});
 				}
 			};
+		});
+		
+		
+		document.querySelectorAll('[data-responsive-example]').forEach((el) => {
+			const parent = el.parentNode;
+			const elMinWidth = el.getAttribute('data-responsive-example');
+			const button = document.createElement('button');
+			button.classList.add('example-toggle');
+			button.innerText = 'Play example';
+			parent.prepend(button);
+			let inter = '';
+			let direction = 'down';
+			let elMaxWidth = parent.offsetWidth;
+			let width = elMaxWidth;
+			el.style.setProperty('--width', width + 'px');
+			button.addEventListener('click', () => {
+				elMaxWidth = parent.offsetWidth;
+				if (width > elMaxWidth) {
+					width = elMaxWidth;
+				}
+				if (width < 0) {
+					width = elMinWidth;
+				}
+				if (inter !== '') {
+					window.clearInterval(inter);
+					inter = '';
+					button.innerText = 'Play example';
+				} else {
+					button.innerText = 'Pause';
+					inter = window.setInterval(() => {
+						if (direction === 'down' && el.offsetWidth >= elMinWidth) {
+							width = width - 1;
+							el.style.width = width + 'px';
+						} else if (direction === 'down') {
+							direction = 'up';
+						} else if (direction === 'up' && el.offsetWidth <= elMaxWidth) {
+							width = width + 1;
+							el.style.width = width + 'px';
+						} else if (direction === 'up') {
+							direction = 'down';
+						}
+						el.style.setProperty('--width', width + 'px');
+					}, 8);
+				}
+			});
+		});
+		
+		document.querySelectorAll('[data-slider-example]').forEach((el) => {
+			const parent = el.parentNode;
+			const button = document.createElement('button');
+			button.classList.add('example-toggle');
+			button.innerText = 'Play example';
+			parent.prepend(button);
+			const slider = document.querySelector('[data-example-slider]');
+			const firstSlide = document.querySelector('[data-example-slider] > *:first-child');
+			const lastSlide = document.querySelector('[data-example-slider] > *:last-child');
+			let inter = '';
+			let direction = 'down';
+			slider.style.height = firstSlide.offsetHeight + 'px';
+			button.addEventListener('click', () => {
+				if (inter !== '') {
+					window.clearInterval(inter);
+					inter = '';
+					button.innerText = 'Play example';
+				} else {
+					button.innerText = 'Pause';
+					slider.classList.add('slide-down');
+					slider.style.height = lastSlide.offsetHeight + 'px';
+					direction = 'up';
+					inter = window.setInterval(() => {
+						if (direction === 'down') {
+							slider.classList.add('slide-down');
+							direction = 'up';
+							slider.style.height = lastSlide.offsetHeight + 'px';
+						} else {
+							slider.classList.remove('slide-down');
+							direction = 'down';
+							slider.style.height = firstSlide.offsetHeight + 'px';
+						}
+					}, 4000);
+				}
+			});
 		});
 	});
 })();

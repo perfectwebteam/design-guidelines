@@ -17,6 +17,11 @@ module.exports = options => {
 		src: `${src}/styleguide.scss`,
 		dest: `${dest}/styleguide.css`
 	});
+	
+	sass({
+		src: `${src}/dev.scss`,
+		dest: `${dest}/dev.css`
+	});
 }
 
 /* eslint-enable */

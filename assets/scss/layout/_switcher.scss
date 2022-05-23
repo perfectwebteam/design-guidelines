@@ -6,6 +6,10 @@
 $switcher-breakpoint: $wider-width !default;
 
 .switcher {
+  &, & > *, & > * > * {
+    max-inline-size: none;
+  }
+
   & > ul {
     padding-left: 0;
     list-style: none;
@@ -23,6 +27,7 @@ $switcher-breakpoint: $wider-width !default;
     flex-grow: 1;
     @include ms(margin-bottom, $illusion-ms-grid-item, 1);
     @include ms(margin-left, $illusion-ms-grid-item, 1);
+    max-width: 100%;
   }
 
   &.gap\:s {
@@ -60,5 +65,15 @@ $switcher-breakpoint: $wider-width !default;
 .switcher--1\:2 {
   > * > *:nth-child(2) {
     flex-grow: $switcher-2to1-amount;
+  }
+}
+
+
+/* Modifiers
+   ========================================================================== */
+
+.switcher--size\:s {
+  & > * > * {
+    flex-basis: calc((#{$switcher-width * .25} - (100% - (#{$root-grid-spacing} * 1rem))) * 999);
   }
 }

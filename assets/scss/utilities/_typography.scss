@@ -5,10 +5,6 @@
 /* Font size
    ========================================================================== */
 
-.font-size\:xxl {
-  @include font-size("xxl");
-}
-
 .font-size\:xl {
   @include font-size("xl");
 }
@@ -29,10 +25,6 @@
   @include font-size("xs");
 }
 
-.font-size\:xxs {
-  @include font-size("xxs");
-}
-
 
 /* Font weight
    ========================================================================== */
@@ -49,16 +41,20 @@
 /* Alignment
    ========================================================================== */
 
-.align\:center {
+.text-align\:center {
   text-align: center;
 }
 
-.align\:right {
+.text-align\:right {
   text-align: right;
 }
 
-.align\:left {
+.text-align\:left {
   text-align: left;
+}
+
+.balance-text {
+  text-wrap: balance;  /* Proposed CSS style, JS polyfill in place currently */
 }
 
 
@@ -73,6 +69,10 @@
   white-space: nowrap;
 }
 
-.balance-text {
-  text-wrap: balance;  /* Proposed CSS style, JS polyfill in place currently */
+.ellipsis\:2 {
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

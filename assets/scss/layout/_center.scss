@@ -3,11 +3,11 @@
    ========================================================================== */
 
 .center {
-  max-width: $content-width;
+  max-width: replaceunit($content-width);
   margin-right: auto;
   margin-left: auto;
 }
 
 .center--size\:xs {
-  max-width: $content-width * .5;
+  max-width: replaceunit($narrow-width);
 }

@@ -65,5 +65,12 @@ if ('querySelector' in document && 'addEventListener' in window) {
                 }
             }
         });
+    
+        
+        // Balance text
+        // ============
+    
+        balanceText();
+        
     }());
 }

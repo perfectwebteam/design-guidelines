@@ -1,3 +1,43 @@
 /* ==========================================================================
    Background
    ========================================================================== */
+
+.background\:example1 {
+  color: $example1-type;
+  background: $example1;
+}
+
+.background\:example2 {
+  color: $example2-type;
+  background: $example2;
+}
+
+.background\:example3 {
+  color: $example3-type;
+  background: $example3;
+}
+
+.background\:example3-light {
+  color: $example3-light-type;
+  background: $example3-light;
+}
+
+.background\:support1 {
+  color: $support1-type;
+  background: $support1;
+}
+
+.background\:support2 {
+  color: $support2-type;
+  background: $support2;
+}
+
+.background\:neutral1 {
+  color: $neutral1-type;
+  background: $neutral1;
+}
+
+.background\:neutral2 {
+  color: $neutral2-type;
+  background: $neutral2;
+}

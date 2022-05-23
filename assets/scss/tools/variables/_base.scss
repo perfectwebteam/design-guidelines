@@ -19,47 +19,45 @@ $root-site-font-size-s:     16 !default; // 2 *
 $root-site-font-size:       18 !default; // 3 *
 $root-site-font-growing:    true !default; // 4 *
 $root-grid-spacing:         2.25 !default; // 5 *
-$root-line-height:          1.6 !default; // 6 *
+$root-line-height:          1.5 !default; // 6 *
 
 
 // Typography
 // ==========================================================================
 
-$font-family:               sans-serif !default;
+$font-family:               Lato, sans-serif !default;
 $weight-normal:             400 !default;
 $weight-medium:             500 !default;
 $weight-bold:               700 !default;
-$heading-font-family:       sans-serif !default;
+$heading-font-family:       $font-family !default;
 $heading-font-weight:       $weight-bold !default;
 $heading-line-height:       1.25em !default;
-$heading-xxs-font-size-1:   px(14, false) * 1rem !default;
-$heading-xxs-font-size-2:   px(15, false) * 1rem !default;
-$heading-xs-font-size-1:    px(15, false) * 1rem !default;
-$heading-xs-font-size-2:    px(16, false) * 1rem !default;
-$heading-s-font-size-1:     px(16, false) * 1rem !default;
-$heading-s-font-size-2:     px(18, false) * 1rem !default;
-$heading-m-font-size-1:     px(18, false) * 1rem !default;
-$heading-m-font-size-2:     px(24, false) * 1rem !default;
-$heading-l-font-size-1:     px(24, false) * 1rem !default;
-$heading-l-font-size-2:     px(36, false) * 1rem !default;
-$heading-xl-font-size-1:    px(36, false) * 1rem !default;
-$heading-xl-font-size-2:    px(48, false) * 1rem !default;
-$heading-xxl-font-size-1:   px(48, false) * 1rem !default;
-$heading-xxl-font-size-2:   px(56, false) * 1rem !default;
-$xxs-font-size-1:           px(12, false) * 1rem !default;
-$xxs-font-size-2:           px(13, false) * 1rem !default;
-$xs-font-size-1:            px(14, false) * 1rem !default;
-$xs-font-size-2:            px(15, false) * 1rem !default;
-$s-font-size-1:             px(15, false) * 1rem !default;
-$s-font-size-2:             px(16, false) * 1rem !default;
-$m-font-size-1:             px(16, false) * 1rem !default;
-$m-font-size-2:             px(17, false) * 1rem !default;
-$l-font-size-1:             px(17, false) * 1rem !default;
-$l-font-size-2:             px(18, false) * 1rem !default;
-$xl-font-size-1:            px(18, false) * 1rem !default;
-$xl-font-size-2:            px(19, false) * 1rem !default;
-$xxl-font-size-1:           px(19, false) * 1rem !default;
-$xxl-font-size-2:           px(20, false) * 1rem !default;
+$heading-xxs-font-size-1:   (14 / $root-site-font-size-s) * 1rem !default;
+$heading-xxs-font-size-2:   (15 / $root-site-font-size-s) * 1rem !default;
+$heading-xs-font-size-1:    (15 / $root-site-font-size-s) * 1rem !default;
+$heading-xs-font-size-2:    (16 / $root-site-font-size-s) * 1rem !default;
+$heading-s-font-size-1:     1rem !default;
+$heading-s-font-size-2:     (18 / $root-site-font-size-s) * 1rem !default;
+$heading-m-font-size-1:     (18 / $root-site-font-size-s) * 1rem !default;
+$heading-m-font-size-2:     (24 / $root-site-font-size-s) * 1rem !default;
+$heading-l-font-size-1:     (24 / $root-site-font-size-s) * 1rem !default;
+$heading-l-font-size-2:     (36 / $root-site-font-size-s) * 1rem !default;
+$heading-xl-font-size-1:    (36 / $root-site-font-size-s) * 1rem !default;
+$heading-xl-font-size-2:    (48 / $root-site-font-size-s) * 1rem !default;
+$heading-xxl-font-size-1:   (48 / $root-site-font-size-s) * 1rem !default;
+$heading-xxl-font-size-2:   (56 / $root-site-font-size-s) * 1rem !default;
+$xs-font-size-1:            (14 / $root-site-font-size-s) * 1rem !default;
+$xs-font-size-2:            (14 / $root-site-font-size-s) * 1rem !default;
+$s-font-size-1:             (15 / $root-site-font-size-s) * 1rem !default;
+$s-font-size-2:             (15 / $root-site-font-size-s) * 1rem !default;
+$m-font-size-1:             1rem !default;
+$m-font-size-2:             1rem !default;
+$l-font-size-1:             (18 / $root-site-font-size-s) * 1rem !default;
+$l-font-size-2:             (18 / $root-site-font-size-s) * 1rem !default;
+$xl-font-size-1:            (20 / $root-site-font-size-s) * 1rem !default;
+$xl-font-size-2:            (22 / $root-site-font-size-s) * 1rem !default;
+
+@debug $m-font-size-1;
 
 
 // Calculated values
@@ -71,7 +69,7 @@ $mobile-font-size:          (math.div($root-site-font-size-s, 16) * 1em) !defaul
 $site-width:                calculatewidth(12) !default;
 $wider-width:               calculatewidth(10) !default;
 $content-width:             calculatewidth(8) !default;
-$narrow-width:              calculatewidth(7) !default;
+$narrow-width:              calculatewidth(6) !default;
 $grid-item-width:           $site-width * 0.25 !default;
 $grid-item-width--l:        math.div($site-width, 3.6) !default;
 $grid-item-width--s:        math.div($site-width, 5.5) !default;

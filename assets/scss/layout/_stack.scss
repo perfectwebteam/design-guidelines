@@ -104,6 +104,12 @@
       @include ms(margin-top, 4);
     }
   }
+
+  &.stack--ms\:none {
+    & > * + * {
+      margin-top: 0;
+    }
+  }
 }
 
 .stack--padded {

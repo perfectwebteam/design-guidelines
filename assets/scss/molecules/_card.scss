@@ -23,6 +23,7 @@
   display: flex;
   flex-wrap: wrap;
   @include font-size("s");
+  box-shadow: 0 0 4px rgba(#000, .2);
 
   [class*="heading:"] {
     a {
@@ -66,6 +67,7 @@
   z-index: 1;
   flex: 1 1 px(120);
   overflow: hidden;
+  background: #f1f1f1;
 
   @supports (object-fit: cover) {
     img {
@@ -78,30 +80,6 @@
 
 .card__body {
   flex: 1 1 auto;
-  width: px(400);
   max-width: 100%;
   @include ms(padding, -1);
-}
-
-.card__heading,
-.card__footer {
-  @include ms(margin-right, -1, -1);
-  @include ms(margin-left, -1, -1);
-  @include ms(padding, -3);
-}
-
-.card__heading {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.card__footer {
-  flex: 1 1 auto;
-}
-
-.card__content,
-.card__footer {
-  &:not(:first-child) {
-    margin-top: 1rem;
-  }
 }

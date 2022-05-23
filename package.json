@@ -92,6 +92,7 @@
     "uninstall": "0.0.0"
   },
   "dependencies": {
+    "balance-text": "^3.3.0",
     "illusion": "github:marsvaardig/illusion#v6.5.0"
   }
 }

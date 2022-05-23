@@ -4,7 +4,7 @@
     'Color',
     'Layout',
     'Buttons',
-    'Icons',
+    'Cards',
     'Form',
     'Utilities'
 ] %}
@@ -20,7 +20,7 @@
     <meta name="msapplication-TileColor" content="#003c85"/>
     <meta name="msapplication-config" content="../assets/images/favicon/browserconfig.xml"/>
     <meta name="theme-color" content="#ffffff"/>
-    <title>Styleguide by PWT</title>
+    <title>Design guidelines by PWT</title>
     <link href="../assets/images/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
     <link href="../assets/images/favicon/favicon-32x32.png" rel="icon" type="image/png" sizes="32x32"/>
     <link href="../assets/images/favicon/favicon-16x16.png" rel="icon" type="image/png" sizes="16x16"/>
@@ -76,8 +76,81 @@
                 {% endfor %}
             </div>
         </div>
-
     </div>
+
+    <div class="overlay-grid-container" style="display: none;">
+        <div class="overlay-grid">
+            <div class="overlay-grid__item"></div>
+            <div class="overlay-grid__item"></div>
+            <div class="overlay-grid__item"></div>
+            <div class="overlay-grid__item"></div>
+            <div class="overlay-grid__item"></div>
+            <div class="overlay-grid__item"></div>
+            <div class="overlay-grid__item"></div>
+            <div class="overlay-grid__item"></div>
+            <div class="overlay-grid__item"></div>
+            <div class="overlay-grid__item"></div>
+            <div class="overlay-grid__item"></div>
+            <div class="overlay-grid__item"></div>
+        </div>
+    </div>
+    <link rel="stylesheet" type="text/css" href="../assets/css/dev.css">
+    <script>
+      !(function() {
+        var isCtrl = false;
+        var isShift = false;
+        var gridContainer = document.querySelector('.overlay-grid-container');
+
+        window.onkeyup = function(e) {
+          if (e.keyCode === 17) isCtrl = false;
+          if (e.keyCode === 16) isShift = false;
+        };
+
+        window.onkeydown = function(e) {
+          e = e || window.event;
+          if (e.keyCode === 17) isCtrl = true;
+          if (e.keyCode === 16) isShift = true;
+
+          // Grid (G key)
+          if (e.keyCode === 71 && isCtrl === true && isShift === true) {
+            if (gridContainer.style.display === 'none') {
+              gridContainer.style.display = 'block';
+            } else {
+              gridContainer.style.display = 'none';
+            }
+          }
+        };
+
+        window.onload = function() {
+          var favicon = document.querySelector('[rel*="shortcut icon"]');
+          var faviconSize = 32;
+          var canvas = document.createElement('canvas');
+          canvas.width = faviconSize;
+          canvas.height = faviconSize;
+
+          var context = canvas.getContext('2d');
+          var img = document.createElement('img');
+          img.src = favicon.href;
+
+          img.onload = function() {
+            // Draw Original Favicon as Background
+            context.drawImage(img, faviconSize * .15, 0, faviconSize * .7, faviconSize * .7);
+
+            // Draw Rectangle
+            context.beginPath();
+            context.fillStyle = "#000";
+            context.fillRect(0, faviconSize * .65, faviconSize, faviconSize * .35);
+            context.font = "11px Arial";
+            context.fillStyle = "#fff";
+            context.textAlign = "center";
+            context.fillText("DEV", faviconSize * .5, faviconSize * .95, faviconSize);
+
+            // Replace favicon
+            favicon.href = canvas.toDataURL('image/png');
+          };
+        };
+      })();
+    </script>
 {% endblock %}
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/gh/cferdinandi/tabby@12/dist/js/tabby.polyfills.min.js" defer></script>
@@ -86,6 +159,7 @@
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.6/build/highlight.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/toastr.min.js" defer></script>
+<script src="../assets/js/scripts.js" defer></script>
 <script src="../assets/js/styleguide.js" defer></script>
 
 </body>
